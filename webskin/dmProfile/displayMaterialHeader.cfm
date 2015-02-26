@@ -60,11 +60,11 @@
 		</div>
 	</header>
 
-	<skin:view typename="#stobj.typename#" objectID="#stobj.objectid#" webskin="displayMaterialPrimaryNavDrawer" />
+	<skin:view typename="#stobj.typename#" objectID="#stobj.objectid#" webskin="displayMaterialDrawerPrimaryNav" />
 
 
-	<skin:view typename="#stobj.typename#" objectID="#stobj.objectid#" webskin="displayMaterialProfileDrawer" />
+	<skin:view typename="#stobj.typename#" objectID="#stobj.objectid#" webskin="displayMaterialDrawerProfile" />
 
 
-	<skin:view typename="#stobj.typename#" objectID="#stobj.objectid#" webskin="displayMaterialSearchDrawer" />
+	<skin:view typename="#stobj.typename#" objectID="#stobj.objectid#" webskin="displayMaterialDrawerSearch" />
 </cfoutput>

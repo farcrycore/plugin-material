@@ -8,6 +8,7 @@
 
 
 <cfparam name="attributes.collapse" default="true" />
+<cfparam name="attributes.active" default="false" />
 
 
 
@@ -21,7 +22,7 @@
 	
 <cfif thistag.executionMode eq "START">	
 	<cfoutput>
-	<div class="tile #iif(attributes.collapse,de('tile-collapse'),de(''))#">
+	<div class="tile #iif(attributes.collapse,de('tile-collapse'),de(''))# #iif(attributes.active,de('active'),de(''))#">
 		<div class="tile-toggle">
 	</cfoutput>
 </cfif>
