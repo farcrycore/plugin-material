@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
-	<title>Modals &amp; Toasts - Material</title>
+	<title>Tabs - Material</title>
 
 	<!-- css -->
 	<link href="css/base.min.css" rel="stylesheet">
@@ -62,10 +62,10 @@
 						<li>
 							<a href="ui-collapse.html"><span class="icon icon-fullscreen-exit"></span>Collpasible Regions</a>
 						</li>
-						<li class="active">
+						<li>
 							<a href="ui-modal.html"><span class="icon icon-flip-to-front"></span>Modals &amp; Toasts</a>
 						</li>
-						<li>
+						<li class="active">
 							<a href="ui-tab.html"><span class="icon icon-tab"></span>Tabs</a>
 						</li>
 						<li>
@@ -169,15 +169,98 @@
 	<div class="content">
 		<div class="content-heading">
 			<div class="container">
-				<h1 class="heading">Modals &amp; Toasts</h1>
+				<h1 class="heading">Tabs</h1>
 			</div>
 		</div>
 		<div class="content-inner">
 			<div class="container">
-				<p class="margin-half-top"><a class="btn" data-toggle="modal" href="#modal">Toggle Modal</a></p>
-				<p><a class="btn" data-toggle="modal" href="#modal-big">Full-width Modal</a></p>
-				<p><a class="btn" data-toggle="toast" href="#normal-toast">Toggle Toast</a></p>
-				<p class="margin-half-bottom"><a class="btn" data-toggle="toast" href="#action-toast">Toast with Action Button</a></p>
+				<nav class="tab-nav">
+					<ul class="nav nav-justified">
+						<li class="active">
+							<a data-toggle="tab" href="#first-tab">First Tab</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#second-tab">Second Tab</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#third-tab">Third Tab</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="tab-content">
+					<div class="tab-pane fade active in" id="first-tab">
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+					</div>
+					<div class="tab-pane fade" id="second-tab">
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+					</div>
+					<div class="tab-pane fade" id="third-tab">
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+					</div>
+				</div>
+				<h2 class="content-sub-heading">Coloured Tab Navs</h2>
+				<p><span class="icon icon-info margin-right-half"></span>Default tab nav inherits link colour ($link-color).</p>
+				<hr>
+				<nav class="tab-nav tab-nav-alt">
+					<ul class="nav nav-justified">
+						<li class="active">
+							<a data-toggle="tab" href="#first-tab-alt">Brand Colour</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#second-tab-alt">Anohter Tab</a>
+						</li>
+					</ul>
+				</nav>
+				<nav class="tab-nav tab-nav-blue">
+					<ul class="nav nav-justified">
+						<li class="active">
+							<a data-toggle="tab" href="#first-tab-blue">Blue Tab Nav</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#second-tab-blue">Anohter Tab</a>
+						</li>
+					</ul>
+				</nav>
+				<nav class="tab-nav tab-nav-green">
+					<ul class="nav nav-justified">
+						<li class="active">
+							<a data-toggle="tab" href="#first-tab-green">Green Tab Nav</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#second-tab-green">Anohter Tab</a>
+						</li>
+					</ul>
+				</nav>
+				<nav class="tab-nav tab-nav-purple">
+					<ul class="nav nav-justified">
+						<li class="active">
+							<a data-toggle="tab" href="#first-tab-purple">Purple Tab Nav</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#second-tab-purple">Anohter Tab</a>
+						</li>
+					</ul>
+				</nav>
+				<nav class="tab-nav tab-nav-red">
+					<ul class="nav nav-justified">
+						<li class="active">
+							<a data-toggle="tab" href="#first-tab-red">Red Tab Nav</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#second-tab-red">Anohter Tab</a>
+						</li>
+					</ul>
+				</nav>
+				<nav class="tab-nav tab-nav-yellow">
+					<ul class="nav nav-justified">
+						<li class="active">
+							<a data-toggle="tab" href="#first-tab-yellow">Yellow Tab Nav</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#second-tab-yellow">Anohter Tab</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 	</div>
@@ -194,65 +277,6 @@
 				<a class="fbtn fbtn-green" href="javascript:void(0)"><span class="fbtn-text">Image</span><span class="icon icon-image"></span></a>
 				<a class="fbtn fbtn-yellow" href="javascript:void(0)"><span class="fbtn-text">Video</span><span class="icon icon-videocam"></span></a>
 			</div>
-		</div>
-	</div>
-	<div aria-hidden="true" class="modal fade" id="modal" role="dialog" tabindex="-1">
-		<div class="modal-dialog modal-xs">
-			<div class="modal-content">
-				<div class="modal-heading">
-					<a class="modal-close" data-dismiss="modal">&times;</a>
-					<h3 class="modal-title">Modal Title</h3>
-				</div>
-				<div class="modal-inner">
-					<h4>Overflowing text to show scroll behaviour</h4>
-					<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-					<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-					<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-					<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-					<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-					<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-				</div>
-				<div class="modal-footer">
-					<p class="text-right"><button class="btn btn-flat btn-blue" data-dismiss="modal" type="button">Close</button><button class="btn btn-flat btn-blue" data-dismiss="modal" type="button">OK</button></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div aria-hidden="true" class="modal fade" id="modal-big" role="dialog" tabindex="-1">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-heading">
-					<a class="modal-close" data-dismiss="modal">&times;</a>
-					<h3 class="modal-title">Modal Title</h3>
-				</div>
-				<div class="modal-inner">
-					<h4>Overflowing text to show scroll behaviour</h4>
-					<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-					<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-					<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-					<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-					<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-					<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-				</div>
-				<div class="modal-footer">
-					<p class="text-right"><button class="btn btn-flat btn-blue" data-dismiss="modal" type="button">Close</button><button class="btn btn-flat btn-blue" data-dismiss="modal" type="button">OK</button></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="toast">
-		<div class="toast-inner" id="normal-toast">
-			<span class="toast-text">Simple toast with some text</span>
-		</div>
-		<div class="toast-inner" id="action-toast">
-			<a class="toast-action" data-dismiss="toast">Action</a>
-			<span class="toast-text">This toast contains one action for you to click</span>
 		</div>
 	</div>
 

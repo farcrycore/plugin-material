@@ -27,5 +27,8 @@
 			$('.menu.open').removeClass('open');
 			$thisLi.addClass('active');
 			$thisMenu.addClass('open');
+			if ($thisMenu.hasClass('menu-search')) {
+				$('#menu-search').focus();
+			};
 		}
 	});
