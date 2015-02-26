@@ -7,6 +7,11 @@
 <cfparam name="attributes.webskin" default="" />
 
 
+<cfparam name="attributes.collapse" default="true" />
+
+
+
+
 
 
 <cfif not thistag.HasEndTag>
@@ -16,7 +21,7 @@
 	
 <cfif thistag.executionMode eq "START">	
 	<cfoutput>
-	<div class="tile tile-collapse">
+	<div class="tile #iif(attributes.collapse,de('tile-collapse'),de(''))#">
 		<div class="tile-toggle">
 	</cfoutput>
 </cfif>
