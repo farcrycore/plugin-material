@@ -8,15 +8,7 @@
 <cfoutput>
 	<footer class="footer">
 		<div class="container">
-			<ul class="list-inline">
-				<li><a href="/material/ui-card.html">Cards</a></li>
-				<li><a href="/material/ui-modal.html">Modals &amp; Toasts</a></li>
-				<li><a href="/material/ui-tile.html">Tiles</a></li>
-				<li>|</li>
-				<li><a href="/material/ui-button.html">Buttons</a></li>
-				<li><a href="/material/ui-form.html">Form Elements</a></li>
-				<li><a href="/material/ui-icon">Icons</a></li>
-			</ul>
+			<p>Material</p>
 		</div>
 	</footer>
 	<div class="fbtn-container">
