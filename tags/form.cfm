@@ -64,7 +64,7 @@
 
 
 		    <skin:onReady>
-		   	$(document).on("click","###Request.farcryForm.Name# button[fcSubmit],###Request.farcryForm.Name# a[fcSubmit]", function(e) {
+		   	$(document).on("click","###Request.farcryForm.Name# button[fcSubmit],###Request.farcryForm.Name# a[fcSubmit] ,###Request.farcryForm.Name# div[fcSubmit]", function(e) {
 		    	
 		    	if ($(this).attr("confirmText")) {
 			    	if( !confirm( $(this).attr("confirmText") ) ) {

@@ -6,6 +6,8 @@
 <cfparam name="attributes.objectid" default="" />
 <cfparam name="attributes.webskin" default="" />
 
+<cfparam name="attributes.collapse" default="true" />
+<cfparam name="attributes.active" default="false" />
 
 <cfif not thistag.HasEndTag>
 	<cfabort showerror="tileEssentialWrap must have an end tag...">
@@ -14,7 +16,7 @@
 	
 <cfif thistag.executionMode eq "START">	
 	<cfoutput>
-	<div class="tile-active-show collapse">
+	<div class="tile-active-show collapse #iif(attributes.collapse,de('tile-collapse'),de(''))# #iif(attributes.active,de('in'),de(''))#">
 		<div class="tile-essential-wrap"
 				ft:tileType="#attributes.typename#" 
 				ft:tileObjectID="#attributes.objectid#" 
