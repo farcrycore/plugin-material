@@ -1,18 +1,48 @@
 <cfimport taglib="/farcry/core/tags/webskin/" prefix="skin" />
 
 
+<cfif not thistag.HasEndTag>
+	<cfabort showerror="Does not have an end tag..." />
+</cfif>
+
+
+<!--- We only render the form if FarcryForm OnExit has not been Fired. --->
+<cfif structKeyExists(request, "FarcryFormOnExitRun") AND Request.FarcryFormOnExitRun>
+	<cfsetting enablecfoutputonly="false" />			
+	<cfexit method="exittag">			
+</cfif>
+
+
 <cfif ListValueCountNoCase(getbasetaglist(),"CF_FORM") EQ 1>
 
 	
 	<!--- Check to make sure that Request.farcryForm.Name exists. This is because other tags may have created Request.farcryForm but only this tag creates "Name" --->
 	<cfif thistag.ExecutionMode EQ "Start" AND NOT isDefined("Request.farcryForm.Name")>
 
-		<cfset Variables.CorrectForm = 1>
+		<cfset Variables.CorrectForm = 1>	
+		
+		<skin:loadJS id="farcry-form" />
+
 
 		<cfparam name="attributes.name" default="#application.fapi.getUUID()#" />
-		<cfparam name="attributes.action" default="" />
-		<cfparam name="attributes.class" default="" />
-		<cfparam name="attributes.style" default="" />
+		<cfparam name="attributes.Target" default="">
+		<cfparam name="attributes.Action" default="">
+		<cfparam name="attributes.method" default="post">
+		<cfparam name="attributes.onsubmit" default="">
+		<cfparam name="attributes.Class" default="">
+		<cfparam name="attributes.Style" default="">
+		<cfparam name="attributes.Validation" default="1">
+		<cfparam name="attributes.bAjaxSubmission" default="false">
+		<cfparam name="attributes.ajaxMaskMsg" default="Form Submitting, please wait...">
+		<cfparam name="attributes.ajaxMaskCls" default="x-mask-loading">
+		<cfparam name="attributes.ajaxTimeout" default="30">
+		<cfparam name="attributes.ajaxTarget" default=""><!--- jQuery selector specifying the target element for the form response. Defaults to the FORM element. --->
+		<cfparam name="attributes.bAddFormCSS" default="true" /><!--- Add relevent form layout css --->
+		<cfparam name="attributes.bFieldHighlight" default="true"><!--- Highlight fields when focused --->
+		<cfparam name="attributes.bFocusFirstField" default="false" /><!--- Focus on first form element. --->
+		<cfparam name="attributes.defaultAction" default="" /><!--- The default action to be used if user presses enter key on browser that doesn't fire onClick event of first button. --->
+		<cfparam name="attributes.autoSave" default="false" /><!--- Enter boolean to toggle default autosave values on properties --->
+		<cfparam name="attributes.autoSaveToSessionOnly" default="false" /><!--- If there are any autosave fields, should they save to the session only? --->
 
 
 		<!--- If we have not received an action url, get the default cgi.script_name?cgi.query_string --->
@@ -27,9 +57,19 @@
 
 
 
-		<cfset Request.farcryForm = "#StructNew()#" />
-		<cfset Request.farcryForm.name = "#attributes.name#" />
-		<cfset Request.farcryForm.action = "#attributes.action#" />
+		<!--- Keep the form information available in the request scope --->
+		<cfset Request.farcryForm = structNew()>
+		<cfset Request.farcryForm.Name = attributes.Name>
+		<cfset Request.farcryForm.Target = attributes.Target>
+		<cfset Request.farcryForm.Action = attributes.Action>
+		<cfset Request.farcryForm.Method = attributes.Method>
+		<cfset Request.farcryForm.onSubmit = attributes.onSubmit>
+		<cfset Request.farcryForm.Validation = attributes.Validation>
+		<cfset Request.farcryForm.stObjects = structNew()>
+		<cfset Request.farcryForm.bAjaxSubmission = attributes.bAjaxSubmission>
+		<cfset Request.farcryForm.lFarcryObjectsRendered = "">	
+		<cfset Request.farcryForm.defaultAction = attributes.defaultAction>	
+		<cfset Request.farcryForm.autoSave = "">		
 
 		<cfoutput>
 			<form 	action="#Request.farcryForm.action#" 
@@ -60,7 +100,7 @@
 			<input type="hidden" id="FarcryFormSubmitted" name="FarcryFormSubmitted"  value="#Request.farcryForm.name#" />
 
 			<!--- Hidden Field to take a UUID from the attributes.SelectedObjectID on ft:button --->
-			<input type="hidden" id="selectedObjectID" name="selectedObjectID" value="" />
+			<input type="hidden" id="selectedObjectID" name="selectedObjectID" class="fc-selected-object-id" value="" />
 
 
 		    <skin:onReady>
@@ -73,7 +113,7 @@
 				};
 
 				$('input.fc-button-clicked').attr('value', $(this).attr("fcSubmit") );
-				$('##selectedObjectID').attr('value', $(this).attr("selectedObjectID") );
+				$('.fc-selected-object-id').attr('value', $(this).attr("selectedObjectID") );
 				
 
 		    	$('###Request.farcryForm.Name#').submit();	
@@ -89,7 +129,7 @@
 				};
 
 				$('input.fc-button-clicked').attr('value', $(this).attr("fcSubmit") );
-				$('##selectedObjectID').attr('value', $(this).val() );
+				$('.fc-selected-object-id').attr('value', $(this).val() );
 				
 
 		    	$('###Request.farcryForm.Name#').submit();	
