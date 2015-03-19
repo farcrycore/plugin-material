@@ -16,12 +16,17 @@
 	
 <cfif thistag.executionMode eq "START">	
 	<cfoutput>
+	</div>
 	<div class="tile-active-show collapse #iif(attributes.collapse,de('tile-collapse'),de(''))# #iif(attributes.active,de('in'),de(''))#">
-		<div class="tile-essential-wrap"
-				ft:tileType="#attributes.typename#" 
-				ft:tileObjectID="#attributes.objectid#" 
-				ft:tileWebskin="#attributes.webskin#" 
-				ft:tileRefreshURL="/#attributes.typename#/#attributes.objectid#?view=#attributes.webskin#&ajaxmode=1">
+		<cfif len(attributes.typename)>
+				
+			<div class="tile-essential-wrap"
+					ft:tileType="#attributes.typename#" 
+					ft:tileObjectID="#attributes.objectid#" 
+					ft:tileWebskin="#attributes.webskin#" 
+					ft:tileRefreshURL="/#attributes.typename#/#attributes.objectid#?view=#attributes.webskin#&ajaxmode=1">
+
+		</cfif>
 	</cfoutput>
 </cfif>
 
@@ -37,7 +42,9 @@
 		</cfif>
 		
 	<cfoutput>
-		</div>
+		<cfif len(attributes.typename)>
+			</div>
+		</cfif>
 	</div>
 	</cfoutput>
 </cfif>
