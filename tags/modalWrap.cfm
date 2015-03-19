@@ -13,14 +13,12 @@
 
 
 
-
-	
 <cfif thistag.executionMode eq "START">	
 	<cfoutput>
 	<!--- <div class="modal-content"> --->
 		<div class="modal-scroll">
 			<div class="modal-heading">
-				<a class="modal-close" onClick="if ( self !== top ) {parent.$('##mint-modal').modal('hide')} else {$('##mint-modal').modal('hide')};">&times;</a>
+				<a class="modal-close" onClick="if ( self !== top ) {parent.$('##mint-modal').modal('hide')} else {$('##mint-modal').modal('hide')};" data-dismiss="modal">&times;</a>
 				<h3 class="modal-title">#attributes.title#</h3>
 			</div><!-- /.modal-heading -->
 			<div class="modal-inner">
