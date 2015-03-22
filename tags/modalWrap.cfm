@@ -51,7 +51,4 @@
 	<!--- </div> --->
 	</cfoutput>
 
-	<skin:onReady>
-		<cfoutput>libPicker($('.lib-picker.in'));</cfoutput>
-	</skin:onReady>
 </cfif>
