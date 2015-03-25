@@ -8,6 +8,7 @@
 <cfparam name="attributes.toggle" default="true" />
 <cfparam name="attributes.active" default="false" />
 <cfparam name="attributes.parent" default="body" />
+<cfparam name="attributes.class" default="" />
 
 
 
@@ -72,7 +73,7 @@
 
 
 	<cfoutput>
-	<div class="tile #iif(attributes.collapse,de('tile-collapse'),de(''))# #iif(attributes.active,de('active'),de(''))#" #lExtraAttributes#>
+	<div class="tile #iif(attributes.collapse,de('tile-collapse'),de(''))# #iif(attributes.active,de('active'),de(''))# #attributes.class#" #lExtraAttributes#>
 		<div data-target="###attributes.id#" #iif(attributes.collapse,de('data-toggle="tile"'),de(''))# #iif(attributes.collapse,de('data-parent="#attributes.parent#"'),de(''))#  class="#iif(attributes.toggle,de('tile-toggle'),de('tile-toggle-false'))#">
 	</cfoutput>
 </cfif>

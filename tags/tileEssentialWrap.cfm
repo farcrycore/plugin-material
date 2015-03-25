@@ -5,6 +5,7 @@
 <cfparam name="attributes.typename" default="" />
 <cfparam name="attributes.objectid" default="" />
 <cfparam name="attributes.webskin" default="" />
+<cfparam name="attributes.class" default="" />
 
 
 <cfif not thistag.HasEndTag>
@@ -66,13 +67,13 @@
 
 	<cfoutput>
 	</div>
-	<div id="#attributes.id#" class="tile-active-show #iif(attributes.collapse,de('collapse'),de(''))# #iif(attributes.activeShowStill,de('tile-active-show-still'),de(''))# #iif(attributes.active,de('in'),de(''))#" #lExtraAttributes#>
+	<div id="#attributes.id#" class="tile-active-show #iif(attributes.collapse,de('collapse'),de(''))# #iif(attributes.activeShowStill,de('tile-active-show-still'),de(''))# #iif(attributes.active,de('in'),de(''))# #attributes.class#" #lExtraAttributes#>
 		<cfif len(attributes.typename)>
 
 			<skin:loadJS id="tileEssentialWrap">
 
 				// tile show
-				$('.tile-active-show').on('show.bs.collapse', function() {
+				$(document).on('show.bs.collapse','.tile-active-show', function() {
 					var $this = $(this);
 				    var $thisWrap = $this.parents('.tile-wrap');
 				    var $thisEssentialWrap = $this.find('.tile-essential-wrap');
