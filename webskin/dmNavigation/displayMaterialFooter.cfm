@@ -38,43 +38,6 @@
 	<!--- Custom JQuery Base --->
 	<script src="/material/js/base.min.js" type="text/javascript"></script>
 
-	
-	<script type='text/javascript'>
-		<cfoutput>
-		$j = jQuery.noConflict();
-		$ = jQuery.noConflict();
-
-		$('html').on('click', '.tile-collapse', function(e) {
-			var $this = $(this),
-			    $thisWrap = $this.parents('.tile-wrap'),
-			    $thisEssentialWrap = $this.find('.tile-essential-wrap');
-			    console.log($thisEssentialWrap.attr('ft:tileRefreshURL')	 );
-			if (!$(e.target).is('a, a *, .collapse, .collapse *', $this)) {
-				if ($this.hasClass('active')) {
-					<!--- $('.tile-active-show.in', $this).collapse('hide');
-										$this.removeClass('active'); --->
-					console.log('tile open');
-					$( $thisEssentialWrap ).load($thisEssentialWrap.attr('ft:tileRefreshURL'));
-					
-				} else {
-					if (!$thisWrap.hasClass('tile-wrap-group')) {
-											<!--- $('.tile-collapse.active .collapse.in', $thisWrap).collapse('hide');
-																						$('.tile-collapse.active', $thisWrap).removeClass('active'); --->
-
-										};
-										<!--- $('.tile-active-show', $this).collapse('show');
-																				$this.addClass('active'); --->
-					console.log('tile collapse');
-				}
-			};
-
-			
-		});
-
-
-
-		</cfoutput>
-	</script>	
 
 
 	<!--- This will place the javascript inline --->
