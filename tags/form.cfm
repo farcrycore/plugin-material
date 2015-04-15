@@ -115,9 +115,10 @@
 				$('input.fc-button-clicked').attr('value', $(this).attr("fcSubmit") );
 				$('.fc-selected-object-id').attr('value', $(this).attr("selectedObjectID") );
 				
-
-		    	$('###Request.farcryForm.Name#').submit();	
-
+				if( $(this).attr("type") === 'submit' ) {
+		    		$('###Request.farcryForm.Name#').submit();	
+				}
+				
 		    	return false;
 		    });
 		   	$(document).on("change","###Request.farcryForm.Name# select[fcSubmit]", function(e) {
