@@ -115,7 +115,7 @@
 				$('input.fc-button-clicked').attr('value', $(this).attr("fcSubmit") );
 				$('.fc-selected-object-id').attr('value', $(this).attr("selectedObjectID") );
 				
-				if( $(this).attr("type") === 'submit' ) {
+				if( $(this).is("a") || $(this).is("div") || $(this).attr("type") === 'submit' ) {
 		    		$('###Request.farcryForm.Name#').submit();	
 				}
 				
