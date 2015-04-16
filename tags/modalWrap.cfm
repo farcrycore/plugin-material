@@ -15,13 +15,29 @@
 
 <cfif thistag.executionMode eq "START">	
 	<cfoutput>
-	<!--- <div class="modal-content"> --->
-		<div class="modal-scroll">
-			<div class="modal-heading">
-				<a class="modal-close" onClick="if ( self !== top ) {parent.$('##mint-modal').modal('hide')} else {$('##mint-modal').modal('hide')};" data-dismiss="modal">&times;</a>
-				<h3 class="modal-title">#attributes.title#</h3>
-			</div><!-- /.modal-heading -->
-			<div class="modal-inner">
+	<header class="header">
+		<div class="clearfix pull-left">
+			<a class="header-logo" href="javascript:void(0);">#attributes.title#</a>
+		</div>
+		<div class="clearfix pull-right">
+			<ul class="nav nav-list pull-right">
+				<li>
+					<a class="modal-close-iframe" href="##modal-iframe">
+						<span class="access-hide">Close</span>
+						<span class="icon icon-close"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	<!--- 
+			<div class="modal-scroll">
+				<div class="modal-heading">
+					<a class="modal-close" onClick="if ( self !== top ) {parent.$('##mint-modal').modal('hide')} else {$('##mint-modal').modal('hide')};" data-dismiss="modal">&times;</a>
+					<h3 class="modal-title">#attributes.title#</h3>
+				</div><!-- /.modal-heading -->
+				<div class="modal-inner"> --->
 	</cfoutput>
 </cfif>
 
