@@ -92,6 +92,10 @@
 					ftTileWebskin="#attributes.webskin#" 
 					ftTileRefreshURL="/#attributes.typename#/#attributes.objectid#?view=#attributes.webskin#&ajaxmode=1">
 
+				<cfif attributes.active>
+					<skin:view typename="#attributes.typename#" objectid="#attributes.objectid#" webskin="#attributes.webskin#" />
+				</cfif>
+
 		</cfif>
 	</cfoutput>
 </cfif>

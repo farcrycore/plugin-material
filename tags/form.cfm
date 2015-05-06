@@ -56,6 +56,9 @@
 		</cfif>
 
 
+		<cfif attributes.autoSaveToSessionOnly>
+			<cfset attributes.class = listAppend(attributes.class,"autoSaveToSessionOnly"," ") />
+		</cfif>
 
 		<!--- Keep the form information available in the request scope --->
 		<cfset Request.farcryForm = structNew()>
