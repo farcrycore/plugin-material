@@ -16,7 +16,7 @@
 			</div><!-- /.container -->
 		</div><!-- /.content-heading -->
 
-		<cfif len(session.fc.lTots)>
+		<cfif structKeyExists(session.fc, "lTots") AND len(session.fc.lTots)>
 
 			<div class="content-nav">
 				<div class="container">
