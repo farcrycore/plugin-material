@@ -14,6 +14,7 @@
 <cfparam name="attributes.textOnClick" default="" /><!--- what should the text change to when the button is clicked.  --->
 <cfparam name="attributes.textOnSubmit" default="" /><!--- what should the text change to when the button is submitted.  --->
 <cfparam name="attributes.disableOnSubmit" default="true" /><!--- should the button be disabled when the form is submitted --->
+<cfparam name="attributes.disabled" default="false"><!--- Should the button be disabled --->
 
 <cfif not thistag.HasEndTag>
 	<cfabort showerror="Buttons must have an end tag...">
@@ -28,6 +29,7 @@
 		value="#attributes.value#" 
 		class="btn #attributes.Class#"
 		style="#attributes.Style#" 
+		<cfif attributes.disabled>disabled</cfif>
 		data-submit-action="#attributes.value#"
 		<cfif len(attributes.onClick)> data-on-click="#attributes.onClick#"</cfif>
 		<cfif len(attributes.SelectedObjectID)> data-selected-objectid="#attributes.SelectedObjectID#"</cfif>
