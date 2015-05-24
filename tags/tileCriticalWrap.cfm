@@ -90,7 +90,7 @@
 		</cfif>
 
 	<cfoutput>
-		
+		<!--- </div> --->
 	</div>
 	</cfoutput>
 </cfif>

@@ -1,6 +1,6 @@
 
 
-<cfparam name="attributes.heading" default="NEW PAGE" /><!--- @@hint: heading of the page --->
+<cfparam name="attributes.heading" default="" /><!--- @@hint: heading of the page --->
 
 <cfif not thistag.HasEndTag>
 	<cfabort showerror="bodyWrap must have an end tag...">
@@ -12,7 +12,9 @@
 	<div class="content">
 		<div class="content-heading">
 			<div class="container">
-				<h1 class="heading">#attributes.heading#</h1>
+				<cfif len(attributes.heading)>
+					<h1 class="heading">#attributes.heading#</h1>
+				</cfif>
 			</div><!-- /.container -->
 		</div><!-- /.content-heading -->
 
