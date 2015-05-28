@@ -80,7 +80,7 @@
 						</div>
 					<cfelse>
 						<div class="col-sm-12">
-							<label class="form-label" <cfif len(attributes.for)>for="#attributes.for#"</cfif>>#attributes.label#</label>
+							<label class="" <cfif len(attributes.for)>for="#attributes.for#"</cfif>>#attributes.label#</label>
 							#innerHTML#
 					
 							<cfif len(trim(attributes.hint))>

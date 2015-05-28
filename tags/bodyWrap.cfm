@@ -1,6 +1,7 @@
 
 
 <cfparam name="attributes.heading" default="" /><!--- @@hint: heading of the page --->
+<cfparam name="attributes.width" default="" /><!--- @@hint: the width of the container --->
 
 <cfif not thistag.HasEndTag>
 	<cfabort showerror="bodyWrap must have an end tag...">
@@ -11,7 +12,7 @@
 	<cfoutput>
 	<div class="content">
 		<div class="content-heading">
-			<div class="container">
+			<div class="container #iif(attributes.width EQ 'full', de('container-full'), de(''))#">
 				<cfif len(attributes.heading)>
 					<h1 class="heading">#attributes.heading#</h1>
 				</cfif>
@@ -21,7 +22,7 @@
 		<cfif structKeyExists(session.fc, "lTots") AND len(session.fc.lTots)>
 
 			<div class="content-nav">
-				<div class="container">
+				<div class="container #iif(attributes.width EQ 'full', de('container-full'), de(''))#">
 					<ul class="breadcrumb">
 
 						<li><a href="#application.fapi.fixURL(addValues='clearTot=1')#"><em>Reset</em></a></li>
@@ -51,7 +52,7 @@
 
 
 		<div class="content-inner">
-			<div class="container">
+			<div class="container #iif(attributes.width EQ 'full', de('container-full'), de(''))#">
 	</cfoutput>
 </cfif>
 
