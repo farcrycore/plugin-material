@@ -66,11 +66,11 @@
 		<cfset var stValConfig = structNew()>
 
 		<cfset stValConfig.wrapper = "">
-		<cfset stValConfig.errorElement = "p">
-		<cfset stValConfig.errorElementClass = "text-error">
-		<cfset stValConfig.errorPlacementSelector = "div.control-group">
-		<cfset stValConfig.fieldContainerSelector = "div.control-group">
-		<cfset stValConfig.fieldContainerClass = "error">
+		<cfset stValConfig.errorElement = "span">
+		<cfset stValConfig.errorElementClass = "form-help form-help-msg text-red">
+		<cfset stValConfig.errorPlacementSelector = ".propertyRefreshWrap">
+		<cfset stValConfig.fieldContainerSelector = "div.tile">
+		<cfset stValConfig.fieldContainerClass = "form-group-red">
 
 		<cfreturn stValConfig>
 	</cffunction>
