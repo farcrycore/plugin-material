@@ -2,7 +2,7 @@
 
 <cfif thistag.executionMode eq "START">	
 	<!--- Remove the JS libraries we dont need --->
-	<cfset lRemoveLibrariesJS = "fc-jquery,jquery-tooltip,fc-jquery-ui,fc-bootstrap,bootstrap-datepicker,jquery-tree,category-formtool,jquery-modal,jquery-validate" />
+	<cfset lRemoveLibrariesJS = "fc-jquery,jquery-tooltip,fc-jquery-ui,fc-bootstrap,bootstrap-datepicker,jquery-tree,category-formtool,jquery-modal" />
 
 	<cfif structKeyExists(request.inHead, "aJSLibraries")>
 		

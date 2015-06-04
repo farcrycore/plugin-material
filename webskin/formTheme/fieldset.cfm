@@ -47,7 +47,7 @@
 	<cfoutput><fieldset class="fieldset" style="#trim(attributes.style)#"></cfoutput>
 	
 	<cfif len(attributes.legend)>
-		<cfoutput><legend>#trim(attributes.legend)#</legend></cfoutput>
+		<cfoutput><legend >#trim(attributes.legend)#</legend></cfoutput>
 	</cfif>
 	
 	<cfif len(attributes.helpSection)>

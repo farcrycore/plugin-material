@@ -66,7 +66,7 @@
 			name="#attributes.Name#" 
 			<cfif len(attributes.Target)> target="#attributes.Target#"</cfif> 
 			enctype="multipart/form-data" 
-			class="#attributes.class#"  
+			class="#attributes.class# form"  
 			style="#attributes.style#" >
 		
 			#innerHTML#
@@ -178,6 +178,86 @@
 			return false;
 		});
 		</cfoutput>
+	</skin:onReady>
+
+
+
+
+	<!------------------------------------------------------------------------------------
+	If we are validating this form, load and initialise the validation engine. 
+	 ------------------------------------------------------------------------------------>
+	<cfif attributes.validation>
+		<skin:loadJS id="material-validation" lFiles="\webtop\thirdparty\jquery-validate-1.13.1\dist\jquery.validate.min.js" />
+
+
+		<!--- Setup farcry form validation (fv) --->
+		<skin:onReady>
+			<cfoutput>
+			if(typeof $j('###attributes.Name#').validate != "undefined") {
+				$fc.fv#attributes.Name# = $j("###attributes.Name#").validate({
+					onsubmit: false, // let the onsubmit function handle the validation
+					errorElement: "span",
+					errorClass: "form-help form-help-msg text-red",
+					//wrapper: "",  // a wrapper around the error message					   
+									   
+					errorPlacement: function(error, element) {
+				  		error.appendTo( element.closest(".propertyRefreshWrap") );
+			        },
+					highlight: function(element, errorClass) {
+					   $j(element).closest("div.form-group").addClass('form-group-red');
+					},
+					unhighlight: function(element, errorClass) {
+					   $j(element).closest("div.form-group").removeClass('form-group-red');
+					}
+				});
+			}
+			
+			</cfoutput>
+		</skin:onReady>
+	</cfif>
+		
+		
+	<!--- If we have anything in the onsubmit, use jquery to run it --->
+	<skin:onReady>
+		<cfoutput>
+		$j('###attributes.Name#').submit(function(){	
+			var valid = true;			
+			<cfif attributes.validation EQ 1>
+				if ( $j("###attributes.Name#").attr('fc:validate') == 'false' ) {
+					$j("###attributes.Name#").attr('fc:validate',true);					
+				} else {
+					valid = $j('###attributes.Name#').valid();
+				}
+			</cfif>			
+				 
+			if(valid){
+				
+				#attributes.onSubmit#;
+				
+				$j("###attributes.Name# .fc-btn, ###attributes.Name# .fc-btn-link").each(function(index,el){
+					
+					if( $j(el).attr('fc:disableOnSubmit') ) {
+						 $j(el).attr('disabled', 'disabled');
+					};
+					
+				});
+				
+			} else {
+				$fc.fv#attributes.Name#.focusInvalid();
+				$('body').addClass('avoid-fout-done');
+				return false;
+			}
+	    });
+		<cfif len(Request.farcryForm.defaultAction)>
+			$j('###attributes.Name# input,select').on("keypress",function(e){
+			if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+				$j('button[value="#replace(replacelist(Request.farcryForm.defaultAction,"\,!,"",##,$,%,&,',(,),*,+,.,/,:,;,<,=,>,?,@,[,],^,`,{,|,},~","\\\,\\!,\\"",\\##,\\$,\\%,\\&,\\',\\(,\\),\\*,\\+,\\.,\\/,\\:,\\;,\\<,\\=,\\>,\\?,\\@,\\[,\\],\\^,\\`,\\{,\\|,\\},\\~"), ",", "\\,", "ALL")#"]').click();
+				return false;
+			} else {
+				return true;
+			}
+		});</cfif>
+		</cfoutput>				
 	</skin:onReady>
 
 
