@@ -4,6 +4,7 @@
 
 
 <cfparam name="attributes.id" default="tile-collapse-#application.fapi.getUUID()#" />
+<cfparam name="attributes.objectid" default="" />
 <cfparam name="attributes.collapse" default="true" />
 <cfparam name="attributes.toggle" default="true" />
 <cfparam name="attributes.active" default="false" />
@@ -70,6 +71,11 @@
 			<cfset lExtraAttributes = listAppend(lExtraAttributes, '#attr#="#attributes[attr]#"', ' ') />
 		</cfif>
 	</cfloop>
+
+	<cfif structKeyExists(session.fc, "filtering") AND structKeyExists(session.fc.filtering, "currentDetailRowID") AND len(attributes.objectid) AND session.fc.filtering.currentDetailRowID EQ attributes.objectid>
+		<cfset attributes.active = true />
+	</cfif>
+
 
 
 	<cfoutput>

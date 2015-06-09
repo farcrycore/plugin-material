@@ -69,21 +69,6 @@
 	</div>
 	<div id="#attributes.id#" class="tile-active-show #iif(attributes.collapse,de('collapse'),de(''))# #iif(attributes.activeShowStill,de('tile-active-show-still'),de(''))# #iif(attributes.active,de('in'),de(''))# #attributes.class#" #lExtraAttributes#>
 		<cfif len(attributes.typename)>
-
-			<skin:loadJS id="tileEssentialWrap">
-
-				// tile show
-				$(document).on('show.bs.collapse','.tile-active-show', function() {
-					var $this = $(this);
-				    var $thisWrap = $this.parents('.tile-wrap');
-				    var $thisEssentialWrap = $this.find('.tile-essential-wrap');
-				    $( $thisEssentialWrap ).html('<div class="tile-sub"><p class="text-center"><i class="fa fa-refresh fa-3x fa-spin"></i></p></div>');
-				    $( $thisEssentialWrap ).load($thisEssentialWrap.attr('ftTileRefreshURL'));
-
-				});
-
-				
-			</skin:loadJS>
 				
 			<div 	
 					class="tile-essential-wrap"
@@ -103,13 +88,10 @@
 	
 <cfif thistag.executionMode eq "END">
 
-	<!--- IF CURRENT OBJECT --->
-	<!--- <skin:view attributeCollection="#attributes#" /> --->	
-	
-		<cfif len(trim(thisTag.GeneratedContent))>
-			<cfoutput>#thisTag.GeneratedContent#</cfoutput>
-			<cfset thisTag.GeneratedContent = "" />
-		</cfif>
+	<cfif len(trim(thisTag.GeneratedContent))>
+		<cfoutput>#thisTag.GeneratedContent#</cfoutput>
+		<cfset thisTag.GeneratedContent = "" />
+	</cfif>
 		
 	<cfoutput>
 		<cfif len(attributes.typename)>
