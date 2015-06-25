@@ -23,14 +23,15 @@
 	
 <cfif thistag.executionMode eq "END">
 
+
 	<cfoutput>
-	<button id="#attributes.id#" name="FarcryForm#attributes.Type#Button=#attributes.value#" 
+	<a id="#attributes.id#" name="FarcryForm#attributes.Type#Button=#attributes.value#" 
 		type="#attributes.type#"
 		value="#attributes.value#" 
 		class="btn #attributes.Class#"
 		style="#attributes.Style#" 
 		<cfif attributes.disabled>disabled</cfif>
-		data-submit-action="#attributes.value#"
+		<cfif attributes.type EQ "submit">data-submit-action="#attributes.value#"</cfif>
 		<cfif len(attributes.onClick)> data-on-click="#attributes.onClick#"</cfif>
 		<cfif len(attributes.SelectedObjectID)> data-selected-objectid="#attributes.SelectedObjectID#"</cfif>
 		<cfif len(attributes.ConfirmText)> data-confirm-text="#attributes.confirmText#"</cfif>
@@ -39,6 +40,12 @@
 		<cfif len(attributes.textOnClick)> data-text-on-click="#attributes.textOnClick#"</cfif>
 		<cfif len(attributes.textOnSubmit)> data-text-on-submit="#attributes.textOnSubmit#"</cfif>
 		<cfif len(attributes.disableOnSubmit)> data-disable-on-submit="#attributes.disableOnSubmit#"</cfif>
+
+		<cfloop list="#structKeyList(attributes)#" index="i">
+			<cfif listFirst(i,'-') EQ "data">
+				#i#="#attributes[i]#"
+			</cfif>
+		</cfloop>
 	>
 		 
 		<cfif listLen(attributes.icon)>
@@ -55,6 +62,6 @@
 				<span class="#trim(listLast(attributes.icon))#"></span>
 			</cfif>
 		</cfif>
-	</button>
+	</a>
 	</cfoutput>
 </cfif>
