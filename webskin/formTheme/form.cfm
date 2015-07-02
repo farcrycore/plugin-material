@@ -80,16 +80,17 @@
 
 	<skin:onReady>
 		<cfoutput>
-		$(document).on("click","###attributes.Name# button[data-submit-action],###attributes.Name# a[data-submit-action] ,###attributes.Name# div[data-submit-action]", function(e) {
+		$(document).on("click","###attributes.Name# button[data-submit-action],###attributes.Name# a[data-submit-action] ,###attributes.Name# div[data-submit-action], ###attributes.Name# .btn-material", function(e) {
 			
 			if( $(this).is('[data-confirm-text!=""][data-confirm-text]') ) {
 		    	if( !confirm( $(this).attr("data-confirm-text") ) ) {
 					return false;
 				}
 			};
-	
-			$('input.fc-button-clicked').attr('value', $(this).attr("data-submit-action") );
-
+			
+			if( $(this).is('[data-submit-action!=""][data-submit-action]') ) {
+				$('input.fc-button-clicked').attr('value', $(this).attr("data-submit-action") );
+			}
 			
 			if( $(this).is('[data-selected-objectid!=""][data-selected-objectid]') ) {
 				$('.fc-selected-object-id').attr('value', $(this).attr("data-selected-objectid") );
@@ -116,11 +117,7 @@
 			};
 
 			
-
-			if( $(this).is("a") || $(this).is("div") || $(this).attr("type") === 'submit' ) {
-
-
-				
+			if( $(this).is('[data-submit-action!=""][data-submit-action]') ) {
 				if( $(this).is('[data-text-on-submit!=""][data-text-on-submit]') ) {
 					$('body>.avoid-fout-indicator>.progress-info').html($(this).attr("data-text-on-submit"));				
 				};

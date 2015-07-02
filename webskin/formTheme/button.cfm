@@ -28,7 +28,7 @@
 	<a id="#attributes.id#" name="FarcryForm#attributes.Type#Button=#attributes.value#" 
 		type="#attributes.type#"
 		value="#attributes.value#" 
-		class="btn #attributes.Class#"
+		class="btn btn-material #attributes.Class#"
 		style="#attributes.Style#" 
 		<cfif attributes.disabled>disabled</cfif>
 		<cfif attributes.type EQ "submit">data-submit-action="#attributes.value#"</cfif>
