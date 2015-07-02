@@ -43,7 +43,7 @@
 			<cfoutput>
 				<div class="checkbox checkbox-adv">
 					<label for="#arguments.fieldname#">
-						<input class="access-hide"  name="#arguments.fieldname#" id="#arguments.fieldname#" type="checkbox" <cfif arguments.stMetadata.value EQ 1>checked</cfif>> 
+						<input class="access-hide"  name="#arguments.fieldname#" id="#arguments.fieldname#" type="checkbox" <cfif arguments.stMetadata.value EQ 1>checked</cfif> value="1"> 
 						<cfif NOT arguments.stMetadata.ftShowLabel>
 							#arguments.stMetadata.ftLabel#
 						</cfif>
