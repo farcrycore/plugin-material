@@ -77,76 +77,80 @@
 
 
 
-
-	<skin:onReady>
-		<cfoutput>
-		$(document).on("click","###attributes.Name# button[data-submit-action],###attributes.Name# a[data-submit-action] ,###attributes.Name# div[data-submit-action], ###attributes.Name# .btn-material", function(e) {
+	<cfif not request.mode.ajax>
 			
-			if( $(this).is('[data-confirm-text!=""][data-confirm-text]') ) {
-		    	if( !confirm( $(this).attr("data-confirm-text") ) ) {
-					return false;
+		<skin:onReady>
+			<cfoutput>
+			$(document).on("click","button[data-submit-action],a[data-submit-action] ,div[data-submit-action], .btn-material", function(e) {
+				
+				if( $(this).is('[data-confirm-text!=""][data-confirm-text]') ) {
+			    	if( !confirm( $(this).attr("data-confirm-text") ) ) {
+						return false;
+					}
+				};
+				
+				if( $(this).is('[data-submit-action!=""][data-submit-action]') ) {
+					$('input.fc-button-clicked').attr('value', $(this).attr("data-submit-action") );
 				}
-			};
-			
-			if( $(this).is('[data-submit-action!=""][data-submit-action]') ) {
-				$('input.fc-button-clicked').attr('value', $(this).attr("data-submit-action") );
-			}
-			
-			if( $(this).is('[data-selected-objectid!=""][data-selected-objectid]') ) {
-				$('.fc-selected-object-id').attr('value', $(this).attr("data-selected-objectid") );
-			};
-
-			
-			if( $(this).is('[data-text-on-click!=""][data-text-on-click]') ) {
-				$('body>.avoid-fout-indicator>.progress-info').html($(this).attr("data-text-on-click"));	
-				<!--- $(this).find('>.button-text').html($(this).attr("data-text-on-click"));	 --->			
-			};
-
-
-
-			
-			if( $(this).is('[data-on-click!=""][data-on-click]') ) {
-				eval("var fn = function(){ "+$(this).attr("data-on-click")+" }");
-				if (fn.call(this,e)===false) return false;		
-			};
-
-			
-			if( $(this).is('[data-url!=""][data-url]') ) {
-				$('body').removeClass('avoid-fout-done');
-				btnURL( $(this).attr("data-url") , $(this).attr("data-target") );
-			};
-
-			
-			if( $(this).is('[data-submit-action!=""][data-submit-action]') ) {
-				if( $(this).is('[data-text-on-submit!=""][data-text-on-submit]') ) {
-					$('body>.avoid-fout-indicator>.progress-info').html($(this).attr("data-text-on-submit"));				
+				
+				if( $(this).is('[data-selected-objectid!=""][data-selected-objectid]') ) {
+					$('.fc-selected-object-id').attr('value', $(this).attr("data-selected-objectid") );
 				};
 
-				$('###attributes.Name#').submit();	
-			}
-			
-			return false;
-		});
-		$(document).on("change","###attributes.Name# select[data-submit-action]", function(e) {
-			
-			if ($(this).attr("confirmText")) {
-		    	if( !confirm( $(this).attr("confirmText") ) ) {
-					return false;
+				
+				if( $(this).is('[data-text-on-click!=""][data-text-on-click]') ) {
+					$('body>.avoid-fout-indicator>.progress-info').html($(this).attr("data-text-on-click"));	
+					<!--- $(this).find('>.button-text').html($(this).attr("data-text-on-click"));	 --->			
+				};
+
+
+				if( $(this).is('[data-disable-validation!=""][data-disable-validation]') ) {
+					$j(this).closest('form').attr('fc:validate',false);
+				};	
+				
+				if( $(this).is('[data-on-click!=""][data-on-click]') ) {
+					eval("var fn = function(){ "+$(this).attr("data-on-click")+" }");
+					if (fn.call(this,e)===false) return false;		
+				};
+
+				
+				if( $(this).is('[data-url!=""][data-url]') ) {
+					$('body').removeClass('avoid-fout-done');
+					btnURL( $(this).attr("data-url") , $(this).attr("data-target") );
+				};
+
+				
+				if( $(this).is('[data-submit-action!=""][data-submit-action]') ) {
+					if( $(this).is('[data-text-on-submit!=""][data-text-on-submit]') ) {
+						$('body>.avoid-fout-indicator>.progress-info').html($(this).attr("data-text-on-submit"));				
+					};
+
+					$(this).closest('form').submit();	
 				}
-			};
-	
-			$('input.fc-button-clicked').attr('value', $(this).attr("data-submit-action") );
-			$('.fc-selected-object-id').attr('value', $(this).val() );
-			
-	
-			$('###attributes.Name#').submit();	
-	
-			return false;
-		});
-		</cfoutput>
-	</skin:onReady>
+				
+				return false;
+			});
+			$(document).on("change","###attributes.Name# select[data-submit-action]", function(e) {
+				
+				if ($(this).attr("confirmText")) {
+			    	if( !confirm( $(this).attr("confirmText") ) ) {
+						return false;
+					}
+				};
+		
+				$('input.fc-button-clicked').attr('value', $(this).attr("data-submit-action") );
+				$('.fc-selected-object-id').attr('value', $(this).val() );
+				
+		
+				$(this).closest('form').submit();	
+		
+				return false;
+			});
+			</cfoutput>
+		</skin:onReady>
 
 
+	</cfif>
 
 
 	<!------------------------------------------------------------------------------------

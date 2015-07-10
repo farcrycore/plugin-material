@@ -15,6 +15,7 @@
 <cfparam name="attributes.textOnSubmit" default="" /><!--- what should the text change to when the button is submitted.  --->
 <cfparam name="attributes.disableOnSubmit" default="true" /><!--- should the button be disabled when the form is submitted --->
 <cfparam name="attributes.disabled" default="false"><!--- Should the button be disabled --->
+<cfparam name="attributes.validate" default=""><!--- Should the form be validated before the onClick event is fired. Default is 'true' for type submit and 'false' for buttons. --->
 
 <cfif not thistag.HasEndTag>
 	<cfabort showerror="Buttons must have an end tag...">
@@ -40,6 +41,7 @@
 		<cfif len(attributes.textOnClick)> data-text-on-click="#attributes.textOnClick#"</cfif>
 		<cfif len(attributes.textOnSubmit)> data-text-on-submit="#attributes.textOnSubmit#"</cfif>
 		<cfif len(attributes.disableOnSubmit)> data-disable-on-submit="#attributes.disableOnSubmit#"</cfif>
+		<cfif isBoolean(attributes.validate) AND NOT attributes.validate> data-disable-validation="1"</cfif>
 
 		<cfloop list="#structKeyList(attributes)#" index="i">
 			<cfif listFirst(i,'-') EQ "data">
