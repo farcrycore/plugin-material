@@ -5,6 +5,7 @@
 <cfparam name="attributes.typename" default="" />
 <cfparam name="attributes.objectid" default="" />
 <cfparam name="attributes.webskin" default="" />
+<cfparam name="attributes.urlParams" default="" />
 <cfparam name="attributes.class" default="" />
 
 
@@ -75,7 +76,7 @@
 					ftTileType="#attributes.typename#" 
 					ftTileObjectID="#attributes.objectid#" 
 					ftTileWebskin="#attributes.webskin#" 
-					ftTileRefreshURL="/#attributes.typename#/#attributes.objectid#?view=#attributes.webskin#&ajaxmode=1">
+					ftTileRefreshURL="/#attributes.typename#/#attributes.objectid#?view=#attributes.webskin#&ajaxmode=1&#attributes.urlParams#">
 
 				<cfif attributes.active>
 					<skin:view typename="#attributes.typename#" objectid="#attributes.objectid#" webskin="#attributes.webskin#" />
