@@ -31,7 +31,7 @@
 		value="#attributes.value#" 
 		class="btn btn-material #attributes.Class#"
 		style="#attributes.Style#" 
-		<cfif attributes.disabled>disabled</cfif>
+		<cfif attributes.disabled>disabled="disabled"</cfif>
 		<cfif attributes.type EQ "submit">data-submit-action="#attributes.value#"</cfif>
 		<cfif len(attributes.onClick)> data-on-click="#attributes.onClick#"</cfif>
 		<cfif len(attributes.SelectedObjectID)> data-selected-objectid="#attributes.SelectedObjectID#"</cfif>

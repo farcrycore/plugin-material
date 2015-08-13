@@ -82,52 +82,55 @@
 		<skin:onReady>
 			<cfoutput>
 			$(document).on("click","button[data-submit-action],a[data-submit-action] ,div[data-submit-action], .btn-material", function(e) {
-				
-				if( $(this).is('[data-confirm-text!=""][data-confirm-text]') ) {
-			    	if( !confirm( $(this).attr("data-confirm-text") ) ) {
-						return false;
+				if( $(this).is('[disabled!=""][disabled]') ) {
+					//ignore
+				} else {
+					if( $(this).is('[data-confirm-text!=""][data-confirm-text]') ) {
+				    	if( !confirm( $(this).attr("data-confirm-text") ) ) {
+							return false;
+						}
+					};
+					
+					if( $(this).is('[data-submit-action!=""][data-submit-action]') ) {
+						$('input.fc-button-clicked').attr('value', $(this).attr("data-submit-action") );
 					}
-				};
-				
-				if( $(this).is('[data-submit-action!=""][data-submit-action]') ) {
-					$('input.fc-button-clicked').attr('value', $(this).attr("data-submit-action") );
-				}
-				
-				if( $(this).is('[data-selected-objectid!=""][data-selected-objectid]') ) {
-					$('.fc-selected-object-id').attr('value', $(this).attr("data-selected-objectid") );
-				};
-
-				
-				if( $(this).is('[data-text-on-click!=""][data-text-on-click]') ) {
-					$('body>.avoid-fout-indicator>.progress-info').html($(this).attr("data-text-on-click"));	
-					<!--- $(this).find('>.button-text').html($(this).attr("data-text-on-click"));	 --->			
-				};
-
-
-				if( $(this).is('[data-disable-validation!=""][data-disable-validation]') ) {
-					$j(this).closest('form').attr('fc:validate',false);
-				};	
-				
-				if( $(this).is('[data-on-click!=""][data-on-click]') ) {
-					eval("var fn = function(){ "+$(this).attr("data-on-click")+" }");
-					if (fn.call(this,e)===false) return false;		
-				};
-
-				
-				if( $(this).is('[data-url!=""][data-url]') ) {
-					$('body').removeClass('avoid-fout-done');
-					btnURL( $(this).attr("data-url") , $(this).attr("data-target") );
-				};
-
-				
-				if( $(this).is('[data-submit-action!=""][data-submit-action]') ) {
-					if( $(this).is('[data-text-on-submit!=""][data-text-on-submit]') ) {
-						$('body>.avoid-fout-indicator>.progress-info').html($(this).attr("data-text-on-submit"));				
+					
+					if( $(this).is('[data-selected-objectid!=""][data-selected-objectid]') ) {
+						$('.fc-selected-object-id').attr('value', $(this).attr("data-selected-objectid") );
 					};
 
-					$(this).closest('form').submit();	
+					
+					if( $(this).is('[data-text-on-click!=""][data-text-on-click]') ) {
+						$('body>.avoid-fout-indicator>.progress-info').html($(this).attr("data-text-on-click"));	
+						<!--- $(this).find('>.button-text').html($(this).attr("data-text-on-click"));	 --->			
+					};
+
+
+					if( $(this).is('[data-disable-validation!=""][data-disable-validation]') ) {
+						$j(this).closest('form').attr('fc:validate',false);
+					};	
+					
+					if( $(this).is('[data-on-click!=""][data-on-click]') ) {
+						eval("var fn = function(){ "+$(this).attr("data-on-click")+" }");
+						if (fn.call(this,e)===false) return false;		
+					};
+
+					
+					if( $(this).is('[data-url!=""][data-url]') ) {
+						$('body').removeClass('avoid-fout-done');
+						btnURL( $(this).attr("data-url") , $(this).attr("data-target") );
+					};
+
+					
+					if( $(this).is('[data-submit-action!=""][data-submit-action]') ) {
+						if( $(this).is('[data-text-on-submit!=""][data-text-on-submit]') ) {
+							$('body>.avoid-fout-indicator>.progress-info').html($(this).attr("data-text-on-submit"));				
+						};
+
+						$(this).closest('form').submit();	
+					}
 				}
-				
+
 				return false;
 			});
 			$(document).on("change","###attributes.Name# select[data-submit-action]", function(e) {
@@ -212,7 +215,7 @@
                 
                 $j("###attributes.Name# .btn, ###attributes.Name# .btn").each(function(index,el){
                     
-                    if( $j(el).attr('fc:disableOnSubmit') ) {
+                    if( $(el).is('[data-disable-on-submit!=""][data-disable-on-submit]') ) {
                          $j(el).attr('disabled', 'disabled');
                     };
                     
