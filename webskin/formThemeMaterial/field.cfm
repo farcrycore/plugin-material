@@ -25,13 +25,13 @@
 </cfif>
 
 <cfparam name="attributes.label" default="&nbsp;"><!--- The fields label --->
-<cfparam name="attributes.labelAlignment" default="inline"><!---  options:inline,block; Used by FarCry Form Layouts for positioning of labels. inline or block. --->
 <cfparam name="attributes.for" default=""><!--- The fieldname the label is for --->
 <cfparam name="attributes.class" default="string"><!---  The class to apply to the field wrapping div. --->
 <cfparam name="attributes.style" default=""><!---  The class to apply to the field wrapping div. --->
 <cfparam name="attributes.hint" default=""><!--- This will place a hint below the field --->
 <cfparam name="attributes.errorMessage" default=""><!--- This will place an errormessage above the field --->
 <cfparam name="attributes.rbkey" default="coapi.field.#rereplace(attributes.label,'[^\w]','','ALL')#" /><!--- The resource path for this field. --->
+<cfparam name="attributes.ftFieldMetadata" default="#structNew()#" /><!--- all the formtool metatdata from the field --->
 
 <cfif thistag.ExecutionMode eq "start">
 	<!--- Do Nothing --->
@@ -57,62 +57,35 @@
 	</cfif>
 	
 	
-	
+	<cfif structKeyExists(attributes.ftFieldMetadata, "ftColClass") AND len(attributes.ftFieldMetadata['ftColClass'])>
+		<cfoutput><div class="#attributes.ftFieldMetadata['ftColClass']#"></cfoutput>
+	<cfelse>		
+		<cfoutput><div class="col-sm-12"></cfoutput>
+	</cfif>
+
 	<cfoutput>
-		<div class="form-group margin-bottom-half margin-top-half #attributes.class#" style="#attributes.style#">
-			<div class="row">
-				<cfif len(attributes.label)>
-					<cfif attributes.labelAlignment EQ 'inline'>
-				
-						<div class="col-sm-3">
-							<label class="form-label" <cfif len(attributes.for)>for="#attributes.for#"</cfif>>#attributes.label#</label>
-						</div>
-						<div class="col-sm-9">
-							#innerHTML#
-					
-							<cfif len(trim(attributes.hint))>
-								<span class="form-help form-help-msg">#trim(attributes.hint)#</i></span>
-							</cfif>
-
-							<cfif len(attributes.errorMessage)>
-								<span class="form-help form-help-msg text-red">#attributes.errorMessage#<i class="form-help-icon icon icon-error"></i></span>
-							</cfif>
-						</div>
-					<cfelse>
-						<div class="col-sm-12">
-							<label class="" <cfif len(attributes.for)>for="#attributes.for#"</cfif>>#attributes.label#</label>
-							#innerHTML#
-					
-							<cfif len(trim(attributes.hint))>
-								<span class="form-help form-help-msg">#trim(attributes.hint)#</i></span>
-							</cfif>
-
-							<cfif len(attributes.errorMessage)>
-								<span class="form-help form-help-msg text-red">#attributes.errorMessage#<i class="form-help-icon icon icon-error"></i></span>
-							</cfif>
-
-						</div>
-					</cfif>
-				<cfelse>
-					<div class="col-sm-12">
-						#innerHTML#
-				
+		<div class="form-group form-control-default margin-bottom-no #attributes.class#" style="#attributes.style#">
+			
+			<cfif len(attributes.label)>
+				<label class="form-label" <cfif len(attributes.for)>for="#attributes.for#"</cfif>>
+					<small>
+						#trim(attributes.label)#
 						<cfif len(trim(attributes.hint))>
-							<span class="form-help form-help-msg">#trim(attributes.hint)#</i></span>
+							<em class="text-hint">#trim(attributes.hint)#</em>
 						</cfif>
+					</small>
+				</label>
+			</cfif>
+			#innerHTML#
 
-						<cfif len(attributes.errorMessage)>
-							<span class="form-help form-help-msg text-red">#attributes.errorMessage#<i class="form-help-icon icon icon-error"></i></span>
-						</cfif>
-					</div>
-				</cfif>
+			<cfif len(attributes.errorMessage)>
+				<span class="form-help form-help-msg text-red">#attributes.errorMessage#<i class="form-help-icon icon icon-error"></i></span>
+			</cfif>
 
-
-			</div>
 		</div>
-		
-		
-		
 	</cfoutput>
+	
+	<cfoutput></div></cfoutput>
+
 </cfif>
 

@@ -10,42 +10,22 @@
 
 
 <cfif not thistag.HasEndTag>
-	<cfabort showerror="tileEssentialWrap must have an end tag...">
+	<cfabort showerror="tilePanel must have an end tag...">
 </cfif>
 	
-
-<!--- 
-<div class="tile-wrap">
-	<div class="tile tile-collapse"><!-- tile-collapse-full -->
-		<div class="tile-toggle" data-target="#tile-collapse-1" data-toggle="tile"><!--  data-parent=".content" -->
-			<div class="pull-left tile-side">
-			</div>
-			<div class="tile-action" data-ignore="tile">								
-			</div>
-			<div class="tile-inner">
-				
-			</div>
-		</div>
-		<div class="tile-active-show collapse" id="tile-collapse-1"><!-- tile-active-show-still -->
-			<div class="tile-sub">
-				
-			</div>
-			<div class="tile-footer">
-				
-			</div>
-		</div>
-	</div>
-</div>
- --->
 
 	
 <cfif thistag.executionMode eq "START">
 
-	<cfif NOT listFindNoCase(GetBaseTagList(),"cf_tileCriticalWrap")>
-		<cfthrow message="tileEssentialWrap requires parent of tileCriticalWrap" />	
+	<cfif NOT listFindNoCase(GetBaseTagList(),"cf_tile")>
+		<cfthrow message="tilePanel requires parent of tile" />	
 	</cfif>
 
-	<cfset THISTAG.Parent = GetBaseTagData( "cf_tileCriticalWrap" ) />
+	<cfset THISTAG.Parent = GetBaseTagData( "cf_tile" ) />
+
+
+	<!--- Using a panel so force tile into collapsible --->
+	<cfset THISTAG.Parent.attributes['collapse'] = true />
 
 
 	<!--- Merge Parent Attributes --->
@@ -57,7 +37,7 @@
 	
 
 	<!--- Identify and attach Extra Attributes --->
-	<cfset lReservedAttributes = "activeShowStill,id,collapse,toggle,active,typename,objectid,webskin,parent" />
+	<cfset lReservedAttributes = "wrapID,tileID,collapse,active,parent,typename,objectid,webskin,urlParams,class,r_stTileData" />
 	
 	<cfset lExtraAttributes = "" />
 	<cfloop collection="#attributes#" item="attr">
@@ -66,9 +46,17 @@
 		</cfif>
 	</cfloop>
 
+</cfif>
+
+	
+<cfif thistag.executionMode eq "END">
+
+	
+	<cfset tilePanelGeneratedContent = thisTag.GeneratedContent />
+	<cfset thisTag.GeneratedContent = "" />
+		
 	<cfoutput>
-	</div>
-	<div id="#attributes.id#" class="tile-active-show #iif(attributes.collapse,de('collapse'),de(''))# #iif(attributes.activeShowStill,de('tile-active-show-still'),de(''))# #iif(attributes.active,de('in'),de(''))# #attributes.class#" #lExtraAttributes#>
+	<div id="#attributes.tileID#-panel" class="tile-active-show #iif(attributes.collapse,de('collapse'),de(''))#  #iif(attributes.active,de('in'),de(''))# #attributes.class#" #lExtraAttributes#>
 		<cfif len(attributes.typename)>
 				
 			<div 	
@@ -83,21 +71,14 @@
 				</cfif>
 
 		</cfif>
-	</cfoutput>
-</cfif>
 
-	
-<cfif thistag.executionMode eq "END">
-
-	<cfif len(trim(thisTag.GeneratedContent))>
-		<cfoutput>#thisTag.GeneratedContent#</cfoutput>
-		<cfset thisTag.GeneratedContent = "" />
-	</cfif>
+		#tilePanelGeneratedContent#
 		
-	<cfoutput>
 		<cfif len(attributes.typename)>
 			</div>
 		</cfif>
 	</div>
 	</cfoutput>
 </cfif>
+
+

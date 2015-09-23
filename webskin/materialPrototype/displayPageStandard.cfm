@@ -10,13 +10,4 @@
 </cfif>
 
 
-
-
-<skin:view typename="dmProfile" objectID="#application.fapi.getCurrentUsersProfile().objectid#" webskin="displayMaterialHeader" />
-
-
-<skin:view typename="#url.type#" objectID="#url.objectid#" webskin="#url.bodyView#" />
-
-
-<skin:view typename="dmProfile" objectID="#application.fapi.getCurrentUsersProfile().objectid#" webskin="displayMaterialFooter" />
-
+<skin:view typename="dmProfile" objectID="#application.fapi.getCurrentUsersProfile().objectid#" webskin="displayPageMaterial" />

@@ -51,8 +51,7 @@
 		</cfif>
 
 
-		<div class="content-inner">
-			<div class="container #iif(attributes.width EQ 'full', de('container-full'), de(''))#">
+		<div class="container #iif(attributes.width EQ 'full', de('container-full'), de(''))#">
 	</cfoutput>
 </cfif>
 
@@ -61,8 +60,7 @@
 			
 <cfif thistag.executionMode eq "END">
 	<cfoutput>
-				</div><!-- /.container -->
-			</div><!-- /.content-inner -->
-		</div><!-- /.content -->
+		</div><!-- /.container -->
+	</div><!-- /.content -->
 	</cfoutput>
 </cfif>
