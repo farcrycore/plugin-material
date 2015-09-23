@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
-	<title>Tabs - Material</title>
+	<title>Navs - Material</title>
 
 	<!-- css -->
 	<link href="css/base.min.css" rel="stylesheet">
@@ -37,35 +37,7 @@
 			</div>
 		</div>
 	</div>
-	<header class="header header-transparent header-waterfall">
-		<ul class="nav nav-list pull-left">
-			<li>
-				<a data-toggle="menu" href="#menu">
-					<span class="icon icon-lg">menu</span>
-				</a>
-			</li>
-		</ul>
-		<a class="header-logo margin-left-no" href="index.html">Material</a>
-		<div class="header-affix pull-left" data-offset-top="108" data-spy="affix">
-			<span class="header-text margin-left-no">
-				<i class="icon margin-right">chevron_right</i>Tabs
-			</span>
-		</div>
-		<nav class="tab-nav tab-nav-white pull-right">
-			<ul class="nav nav-list">
-				<li class="active">
-					<a class="waves-attach waves-light" data-toggle="tab" href="#first-tab-header">First Tab</a>
-				</li>
-				<li>
-					<a class="waves-attach waves-light" data-toggle="tab" href="#second-tab-header">Second Tab</a>
-				</li>
-				<li>
-					<a class="waves-attach waves-light" data-toggle="tab" href="#third-tab-header">Third Tab</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
-	<nav aria-hidden="true" class="menu" id="menu" tabindex="-1">
+	<nav class="menu menu-left nav-drawer nav-drawer-lg" id="menu">
 		<div class="menu-scroll">
 			<div class="menu-content">
 				<a class="menu-logo" href="index.html">Material</a>
@@ -82,13 +54,13 @@
 					<li>
 						<a class="waves-attach" href="ui-modal.html">Modals &amp; Toasts</a>
 					</li>
-					<li>
+					<li class="active">
 						<a class="waves-attach" href="ui-nav.html">Navs</a>
 					</li>
 					<li>
 						<a class="waves-attach" href="ui-progress.html">Progress Bars</a>
 					</li>
-					<li class="active">
+					<li>
 						<a class="waves-attach" href="ui-tab.html">Tabs</a>
 					</li>
 					<li>
@@ -143,6 +115,29 @@
 			</div>
 		</div>
 	</nav>
+	<header class="header header-transparent header-waterfall">
+		<ul class="nav nav-list pull-left hidden-lg">
+			<li>
+				<a data-toggle="menu" href="#menu">
+					<span class="icon icon-lg">menu</span>
+				</a>
+			</li>
+		</ul>
+		<a class="header-logo hidden-lg margin-left-no" href="index.html">Material</a>
+		<div class="header-affix pull-left" data-offset-top="108" data-spy="affix">
+			<span class="header-text margin-left-no">
+				<i class="hidden-lg icon margin-right">chevron_right</i>Navs
+			</span>
+		</div>
+		<ul class="nav nav-list pull-right">
+			<li>
+				<a data-toggle="menu" href="#profile">
+					<span class="access-hide">John Smith</span>
+					<span class="avatar"><img alt="alt text for John Smith avatar" src="images/users/avatar-001.jpg"></span>
+				</a>
+			</li>
+		</ul>
+	</header>
 	<nav aria-hidden="true" class="menu menu-right" id="profile" tabindex="-1">
 		<div class="menu-scroll">
 			<div class="menu-top">
@@ -174,134 +169,124 @@
 	<div class="content">
 		<div class="content-heading">
 			<div class="container">
-				<h1 class="heading">Tabs</h1>
+				<h1 class="heading">Navs</h1>
 			</div>
 		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-8">
 					<section class="content-inner">
-						<p><span class="icon margin-right-sm">info</span>Default tab nav inherits accent colour (<code>$brand-color-accent</code>).</p>
-						<nav class="tab-nav">
-							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#first-tab">First Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#second-tab">Second Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#third-tab">Third Tab</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="first-tab">
-								<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-							</div>
-							<div class="tab-pane fade" id="second-tab">
-								<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-							</div>
-							<div class="tab-pane fade" id="third-tab">
-								<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-							</div>
-						</div>
-						<nav class="tab-nav tab-nav-brand">
-							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#first-tab-brand">Brand Colour</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#second-tab-brand">Another Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#third-tab-brand">Third Tab</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="first-tab-brand">
-								<p>Brand Colour.</p>
-							</div>
-							<div class="tab-pane fade" id="second-tab-brand">
-								<p>Another Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="third-tab-brand">
-								<p>Third Tab.</p>
+						<h2 class="content-sub-heading">Breadcrumb</h2>
+						<ul class="breadcrumb">
+							<li>
+								<a href="javascript:void(0)">Material</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Components</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Navs</a>
+							</li>
+							<li class="active">
+								<a href="javascript:void(0)">Breadcrumb</a>
+							</li>
+						</ul>
+						<h2 class="content-sub-heading">Default Nav</h2>
+						<div class="card-wrap">
+							<div class="card">
+								<div class="card-main">
+									<div class="card-inner">
+										<ul class="nav">
+											<li>
+												<a class="waves-attach" href="javascript:void(0)">Home</a>
+											</li>
+											<li>
+												<a class="waves-attach" href="javascript:void(0)">Element</a>
+											</li>
+											<li>
+												<a class="waves-attach" href="javascript:void(0)">Theme</a>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
-						<nav class="tab-nav tab-nav-amber">
-							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#first-tab-amber">Amber Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#second-tab-amber">Another Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#third-tab-amber">Third Tab</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="first-tab-amber">
-								<p>Amber Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="second-tab-amber">
-								<p>Another Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="third-tab-amber">
-								<p>Third Tab.</p>
+						<h2 class="content-sub-heading">Horizontal Nav</h2>
+						<div class="card-wrap">
+							<div class="card">
+								<div class="card-main">
+									<div class="card-inner">
+										<ul class="nav nav-list">
+											<li>
+												<a class="waves-attach" href="javascript:void(0)">Home</a>
+											</li>
+											<li>
+												<a class="waves-attach" href="javascript:void(0)">Element</a>
+											</li>
+											<li>
+												<a class="waves-attach" href="javascript:void(0)">Theme</a>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
-						<nav class="tab-nav tab-nav-green">
-							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#first-tab-green">Green Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#second-tab-green">Another Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#third-tab-green">Third Tab</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="first-tab-green">
-								<p>Green Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="second-tab-green">
-								<p>Another Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="third-tab-green">
-								<p>Third Tab.</p>
+						<h2 class="content-sub-heading">Justified Nav</h2>
+						<div class="card-wrap">
+							<div class="card">
+								<div class="card-main">
+									<div class="card-inner">
+										<ul class="nav nav-justified">
+											<li>
+												<a class="waves-attach" href="javascript:void(0)">Home</a>
+											</li>
+											<li>
+												<a class="waves-attach" href="javascript:void(0)">Element</a>
+											</li>
+											<li>
+												<a class="waves-attach" href="javascript:void(0)">Theme</a>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
-						<nav class="tab-nav tab-nav-red">
-							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#first-tab-red">Red Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#second-tab-red">Another Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#third-tab-red">Third Tab</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="first-tab-red">
-								<p>Red Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="second-tab-red">
-								<p>Another Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="third-tab-red">
-								<p>Third Tab.</p>
-							</div>
-						</div>
+						<h2 class="content-sub-heading">More Examples</h2>
+						<p>The base <code>.nav</code> can be used in conjunction with other material elements, for example <code>.tile</code>, to create more stylish navs.</p>
+						<ul class="nav">
+							<li>
+								<a class="tile waves-attach" href="javascript:void(0)">Home</a>
+							</li>
+							<li>
+								<a class="tile waves-attach" href="javascript:void(0)">Element</a>
+							</li>
+							<li>
+								<a class="tile waves-attach" href="javascript:void(0)">Theme</a>
+							</li>
+						</ul>
+						<ul class="nav nav-list">
+							<li>
+								<a class="tile waves-attach" href="javascript:void(0)">Home</a>
+							</li>
+							<li>
+								<a class="tile waves-attach" href="javascript:void(0)">Element</a>
+							</li>
+							<li>
+								<a class="tile waves-attach" href="javascript:void(0)">Theme</a>
+							</li>
+						</ul>
+						<ul class="nav nav-justified">
+							<li>
+								<a class="tile waves-attach" href="javascript:void(0)">Home</a>
+							</li>
+							<li>
+								<a class="tile waves-attach" href="javascript:void(0)">Element</a>
+							</li>
+							<li>
+								<a class="tile waves-attach" href="javascript:void(0)">Theme</a>
+							</li>
+						</ul>
+						<p>For examples of tabbed navs, please go to <a href="ui-tab.html">Tabs</a> page.</p>
 					</section>
 				</div>
 			</div>
@@ -314,7 +299,7 @@
 	</footer>
 	<div class="fbtn-container">
 		<div class="fbtn-inner">
-			<a class="fbtn fbtn-brand-accent fbtn-lg" data-toggle="dropdown"><span class="fbtn-text">Links</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
+			<a class="fbtn fbtn-red fbtn-lg" data-toggle="dropdown"><span class="fbtn-text">Links</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
 			<div class="fbtn-dropdown">
 				<a class="fbtn" href="https://github.com/Daemonite/material" target="_blank"><span class="fbtn-text">Fork me on GitHub</span><span class="fa fa-github"></span></a>
 				<a class="fbtn fbtn-blue" href="https://twitter.com/daemonites" target="_blank"><span class="fbtn-text">Follow Daemon on Twitter</span><span class="fa fa-twitter"></span></a>

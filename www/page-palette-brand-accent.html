@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
-	<title>Material</title>
+	<title>Page Palettes: Accent - Material</title>
 
 	<!-- css -->
 	<link href="css/base.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-<body class="avoid-fout page-brand">
+<body class="avoid-fout page-brand-accent">
 	<div class="avoid-fout-indicator avoid-fout-indicator-fixed">
 		<div class="progress-circular progress-circular-center">
 			<div class="progress-circular-wrapper">
@@ -45,7 +45,15 @@
 				</a>
 			</li>
 		</ul>
-		<a class="header-logo margin-left-no" href="index.html">Material</a>
+		<div class="header-affix-hide pull-left" data-offset-top="108" data-spy="affix">
+			<a class="header-logo margin-left-no" href="index.html">Material</a>
+		</div>
+		<div class="header-affix pull-left" data-offset-top="108" data-spy="affix">
+			<span class="header-logo margin-left-no">Palettes</span>
+			<span class="header-text margin-left-no">
+				<i class="icon margin-right">chevron_right</i>Accent
+			</span>
+		</div>
 		<ul class="nav nav-list pull-right">
 			<li>
 				<a data-toggle="menu" href="#profile">
@@ -110,12 +118,12 @@
 				<ul class="nav">
 					<li>
 						<a class="waves-attach" href="page-palette.html">Page Palettes</a>
-						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#page-palettes" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
-						<ul class="menu-collapse collapse" id="page-palettes">
+						<span class="menu-collapse-toggle waves-attach" data-target="#page-palettes" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+						<ul class="menu-collapse collapse in" id="page-palettes">
 							<li>
 								<a class="waves-attach" href="page-palette-brand.html">Brand Palette</a>
 							</li>
-							<li>
+							<li class="active">
 								<a class="waves-attach" href="page-palette-brand-accent.html">Accent Palette</a>
 							</li>
 							<li>
@@ -164,104 +172,38 @@
 	<div class="content">
 		<div class="content-heading">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
-						<h1 class="heading">Material</h1>
-					</div>
-				</div>
+				<h1 class="heading">Accent Palette</h1>
 			</div>
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+				<div class="col-lg-8 col-md-10">
 					<section class="content-inner">
-						<p>Material is an HTML5 UI design based on Google Material.</p>
-						<blockquote>
-							<p>A visual language for our users that synthesizes the classic principles of good design with the innovation and possibility of technology and science. This is material design.</p>
-							<p><a class="text-break" href="http://www.google.com/design/spec/material-design/introduction.html">http://www.google.com/design/spec/material-design/introduction.html</a></p>
-						</blockquote>
-						<p>Have a play with a <a href="http://daemonite.github.io/material/">working prototype of Material</a>, let us know what you think at the <a href="http://labs.daemon.com.au">Daemon Labs</a> forum.</p>
-						<h2 class="content-sub-heading">Components</h2>
+						<h2 class="content-sub-heading">Page Palettes</h2>
 						<div class="tile-wrap">
-							<a class="tile waves-attach" href="ui-card.html">
+							<a class="tile waves-attach" href="page-palette-brand.html">
 								<div class="tile-inner">
-									<span>Cards</span>
+									<span>Brand</span>
 								</div>
 							</a>
-							<a class="tile waves-attach" href="ui-collapse.html">
+							<a class="tile waves-attach" href="page-palette-brand-accent.html">
 								<div class="tile-inner">
-									<span>Collapsible Regions</span>
+									<span>Accent</span>
 								</div>
 							</a>
-							<a class="tile waves-attach" href="ui-dropdown.html">
+							<a class="tile waves-attach" href="page-palette-amber.html">
 								<div class="tile-inner">
-									<span>Dropdowns</span>
+									<span>Amber</span>
 								</div>
 							</a>
-							<a class="tile waves-attach" href="ui-modal.html">
+							<a class="tile waves-attach" href="page-palette-green.html">
 								<div class="tile-inner">
-									<span>Modal &amp; Toasts</span>
+									<span>Green</span>
 								</div>
 							</a>
-							<a class="tile waves-attach" href="ui-nav.html">
+							<a class="tile waves-attach" href="page-palette-red.html">
 								<div class="tile-inner">
-									<span>Navs</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-progress.html">
-								<div class="tile-inner">
-									<span>Progress Bars</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-tab.html">
-								<div class="tile-inner">
-									<span>Tabs</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-tile.html">
-								<div class="tile-inner">
-									<span>Tiles</span>
-								</div>
-							</a>
-						</div>
-						<h2 class="content-sub-heading">Elements</h2>
-						<div class="tile-wrap">
-							<a class="tile waves-attach" href="ui-button.html">
-								<div class="tile-inner">
-									<span>Button</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-form.html">
-								<div class="tile-inner">
-									<span>Form Elements <small>(basic)</small></span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-form-adv.html">
-								<div class="tile-inner">
-									<span>Form Elements <small>(materialised)</small></span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-icon.html">
-								<div class="tile-inner">
-									<span>Icons</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-table.html">
-								<div class="tile-inner">
-									<span>Tables</span>
-								</div>
-							</a>
-						</div>
-						<h2 class="content-sub-heading">Sample Pages</h2>
-						<div class="tile-wrap">
-							<a class="tile waves-attach" href="page-login.html">
-								<div class="tile-inner">
-									<span>Login Page</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="page-palette.html">
-								<div class="tile-inner">
-									<span>Page Palettes</span>
+									<span>Red</span>
 								</div>
 							</a>
 						</div>
@@ -275,16 +217,6 @@
 			<p>Material</p>
 		</div>
 	</footer>
-	<div class="fbtn-container">
-		<div class="fbtn-inner">
-			<a class="fbtn fbtn-brand-accent fbtn-lg" data-toggle="dropdown"><span class="fbtn-text">Links</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
-			<div class="fbtn-dropdown">
-				<a class="fbtn" href="https://github.com/Daemonite/material" target="_blank"><span class="fbtn-text">Fork me on GitHub</span><span class="fa fa-github"></span></a>
-				<a class="fbtn fbtn-blue" href="https://twitter.com/daemonites" target="_blank"><span class="fbtn-text">Follow Daemon on Twitter</span><span class="fa fa-twitter"></span></a>
-				<a class="fbtn fbtn-alt" href="http://www.daemon.com.au/" target="_blank"><span class="fbtn-text">Visit Daemon Website</span><span class="icon">link</span></a>
-			</div>
-		</div>
-	</div>
 
 	<!-- js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

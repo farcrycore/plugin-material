@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
-	<title>Tabs - Material</title>
+	<title>Dropdowns - Material</title>
 
 	<!-- css -->
 	<link href="css/base.min.css" rel="stylesheet">
@@ -48,22 +48,31 @@
 		<a class="header-logo margin-left-no" href="index.html">Material</a>
 		<div class="header-affix pull-left" data-offset-top="108" data-spy="affix">
 			<span class="header-text margin-left-no">
-				<i class="icon margin-right">chevron_right</i>Tabs
+				<i class="icon margin-right">chevron_right</i>Dropdowns
 			</span>
 		</div>
-		<nav class="tab-nav tab-nav-white pull-right">
-			<ul class="nav nav-list">
-				<li class="active">
-					<a class="waves-attach waves-light" data-toggle="tab" href="#first-tab-header">First Tab</a>
-				</li>
-				<li>
-					<a class="waves-attach waves-light" data-toggle="tab" href="#second-tab-header">Second Tab</a>
-				</li>
-				<li>
-					<a class="waves-attach waves-light" data-toggle="tab" href="#third-tab-header">Third Tab</a>
-				</li>
-			</ul>
-		</nav>
+		<ul class="nav nav-list pull-right">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown"><span class="icon icon-lg">more_vert</span></a>
+				<ul class="dropdown-menu">
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">loop</span>&nbsp;Lorem Ipsum</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">replay</span>&nbsp;Consectetur Adipiscing</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">shuffle</span>&nbsp;Sed Ornare</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a data-toggle="menu" href="#profile">
+					<span class="access-hide">John Smith</span>
+					<span class="avatar"><img alt="alt text for John Smith avatar" src="images/users/avatar-001.jpg"></span>
+				</a>
+			</li>
+		</ul>
 	</header>
 	<nav aria-hidden="true" class="menu" id="menu" tabindex="-1">
 		<div class="menu-scroll">
@@ -76,7 +85,7 @@
 					<li>
 						<a class="waves-attach" href="ui-collapse.html">Collapsible Regions</a>
 					</li>
-					<li>
+					<li class="active">
 						<a class="waves-attach" href="ui-dropdown.html">Dropdowns</a>
 					</li>
 					<li>
@@ -88,7 +97,7 @@
 					<li>
 						<a class="waves-attach" href="ui-progress.html">Progress Bars</a>
 					</li>
-					<li class="active">
+					<li>
 						<a class="waves-attach" href="ui-tab.html">Tabs</a>
 					</li>
 					<li>
@@ -174,137 +183,81 @@
 	<div class="content">
 		<div class="content-heading">
 			<div class="container">
-				<h1 class="heading">Tabs</h1>
+				<h1 class="heading">Dropdowns</h1>
 			</div>
 		</div>
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-8">
-					<section class="content-inner">
-						<p><span class="icon margin-right-sm">info</span>Default tab nav inherits accent colour (<code>$brand-color-accent</code>).</p>
-						<nav class="tab-nav">
-							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#first-tab">First Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#second-tab">Second Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#third-tab">Third Tab</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="first-tab">
-								<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-							</div>
-							<div class="tab-pane fade" id="second-tab">
-								<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-							</div>
-							<div class="tab-pane fade" id="third-tab">
-								<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-							</div>
-						</div>
-						<nav class="tab-nav tab-nav-brand">
-							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#first-tab-brand">Brand Colour</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#second-tab-brand">Another Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#third-tab-brand">Third Tab</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="first-tab-brand">
-								<p>Brand Colour.</p>
-							</div>
-							<div class="tab-pane fade" id="second-tab-brand">
-								<p>Another Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="third-tab-brand">
-								<p>Third Tab.</p>
-							</div>
-						</div>
-						<nav class="tab-nav tab-nav-amber">
-							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#first-tab-amber">Amber Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#second-tab-amber">Another Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#third-tab-amber">Third Tab</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="first-tab-amber">
-								<p>Amber Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="second-tab-amber">
-								<p>Another Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="third-tab-amber">
-								<p>Third Tab.</p>
+			<section class="content-inner">
+				<h2 class="content-sub-heading">Basic Dropdown</h2>
+				<div class="card-wrap">
+					<div class="row">
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="card">
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Dropdown!</p>
+										<p>
+											Lorem ipsum dolor sit amet.<br>
+											Consectetur adipiscing elit.
+										</p>
+									</div>
+									<div class="card-action">
+										<ul class="margin-no nav nav-list pull-left">
+											<li class="dropdown">
+												<a class="dropdown-toggle text-default waves-attach" data-toggle="dropdown"><span class="icon">more_vert</span></a>
+												<ul class="dropdown-menu">
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">loop</span>&nbsp;Lorem Ipsum</a>
+													</li>
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">replay</span>&nbsp;Consectetur Adipiscing</a>
+													</li>
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">shuffle</span>&nbsp;Sed Ornare</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<ul class="margin-no nav nav-list pull-right">
+											<li class="dropdown">
+												<a class="dropdown-toggle text-default waves-attach" data-toggle="dropdown"><span class="icon">more_vert</span></a>
+												<ul class="dropdown-menu">
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">loop</span>&nbsp;Lorem Ipsum</a>
+													</li>
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">replay</span>&nbsp;Consectetur Adipiscing</a>
+													</li>
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">shuffle</span>&nbsp;Sed Ornare</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
-						<nav class="tab-nav tab-nav-green">
-							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#first-tab-green">Green Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#second-tab-green">Another Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#third-tab-green">Third Tab</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="first-tab-green">
-								<p>Green Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="second-tab-green">
-								<p>Another Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="third-tab-green">
-								<p>Third Tab.</p>
-							</div>
-						</div>
-						<nav class="tab-nav tab-nav-red">
-							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#first-tab-red">Red Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#second-tab-red">Another Tab</a>
-								</li>
-								<li>
-									<a class="waves-attach" data-toggle="tab" href="#third-tab-red">Third Tab</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="first-tab-red">
-								<p>Red Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="second-tab-red">
-								<p>Another Tab.</p>
-							</div>
-							<div class="tab-pane fade" id="third-tab-red">
-								<p>Third Tab.</p>
-							</div>
-						</div>
-					</section>
+					</div>
 				</div>
-			</div>
+				<h2 class="content-sub-heading">Button Dropdown</h2>
+				<div class="dropdown-wrap">
+					<div class="dropdown dropdown-inline">
+						<a class="btn dropdown-toggle-btn waves-attach" data-toggle="dropdown">Button Dropdown<span class="icon margin-left-sm">keyboard_arrow_down</span></a>
+						<ul class="dropdown-menu nav">
+							<li>
+								<a class="waves-attach" href="javascript:void(0)">Lorem Ipsum</a>
+							</li>
+							<li>
+								<a class="waves-attach" href="javascript:void(0)">Consectetur Adipiscing</a>
+							</li>
+							<li>
+								<a class="waves-attach" href="javascript:void(0)">Sed Ornare</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
 		</div>
 	</div>
 	<footer class="footer">

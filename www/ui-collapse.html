@@ -1,184 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
-	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
+	<meta content="initial-scale=1.0, width=device-width" name="viewport">
 	<title>Collapsible Regions - Material</title>
 
 	<!-- css -->
 	<link href="css/base.min.css" rel="stylesheet">
+
+	<!-- css for this project -->
+	<link href="css/project.min.css" rel="stylesheet">
 
 	<!-- favicon -->
 	<!-- ... -->
 
 	<!-- ie -->
 		<!--[if lt IE 9]>
-			<script src="js/html5shiv.js" type="text/javascript"></script>
-			<script src="js/respond.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-<body>
-	<header class="header">
-		<div class="clearfix pull-left">
-			<ul class="nav nav-list pull-left">
-				<li>
-					<a href="#menu">
-						<span class="access-hide">Menu</span>
-						<span class="icon icon-menu"></span>
-						<span class="header-close icon icon-close"></span>
-					</a>
-				</li>
-			</ul>
-			<a class="header-logo" href="index.html">Material</a>
-		</div>
-		<div class="clearfix pull-right">
-			<ul class="nav nav-list pull-right">
-				<li>
-					<a href="#search">
-						<span class="access-hide">Search</span>
-						<span class="icon icon-search"></span>
-						<span class="header-close icon icon-close"></span>
-					</a>
-				</li>
-				<li>
-					<a href="#profile">
-						<span class="access-hide">John Smith</span>
-						<span class="avatar avatar-sm"><img alt="John Smith" src="images/users/avatar-001.jpg"></span>
-						<span class="header-close icon icon-close"></span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</header>
-	<nav class="menu" id="menu">
-		<div class="menu-scroll">
-			<div class="menu-wrap">
-				<div class="menu-content">
-					<ul class="nav">
-						<li>
-							<a href="ui-card.html"><span class="icon icon-apps"></span>Cards</a>
-						</li>
-						<li class="active">
-							<a href="ui-collapse.html"><span class="icon icon-fullscreen-exit"></span>Collpasible Regions</a>
-						</li>
-						<li>
-							<a href="ui-modal.html"><span class="icon icon-flip-to-front"></span>Modals &amp; Toasts</a>
-						</li>
-						<li>
-							<a href="ui-tab.html"><span class="icon icon-tab"></span>Tabs</a>
-						</li>
-						<li>
-							<a href="ui-tile.html"><span class="icon icon-storage"></span>Tiles</a>
-						</li>
-					</ul>
-					<hr>
-					<ul class="nav">
-						<li>
-							<a href="ui-button.html"><span class="icon icon-dialpad"></span>Buttons</a>
-						</li>
-						<li>
-							<a href="ui-form.html"><span class="icon icon-border-color"></span>Form Elements</a>
-						</li>
-						<li>
-							<a href="ui-icon.html"><span class="icon icon-mood"></span>Icons</a>
-						</li>
-					</ul>
-					<hr>
-					<ul class="nav">
-						<li>
-							<a href="page-404.html"><span class="icon icon-web"></span>404 Page</a>
-						</li>
-						<li>
-							<a href="page-500.html"><span class="icon icon-web"></span>500 Page</a>
-						</li>
-						<li>
-							<a href="page-login.html"><span class="icon icon-exit-to-app"></span>Login Page</a>
-						</li>
-						<li>
-							<a href="page-palette.html"><span class="icon icon-color-lens"></span>Page Palettes</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-	<nav class="menu menu-right" id="profile">
-		<div class="menu-scroll">
-			<div class="menu-wrap">
-				<div class="menu-top">
-					<div class="menu-top-img">
-						<img alt="John Smith" src="images/samples/landscape.jpg">
+<body class="avoid-fout page-brand">
+	<div class="avoid-fout-indicator avoid-fout-indicator-fixed">
+		<div class="progress-circular progress-circular-center">
+			<div class="progress-circular-wrapper">
+				<div class="progress-circular-inner">
+					<div class="progress-circular-left">
+						<div class="progress-circular-spinner"></div>
 					</div>
-					<div class="menu-top-info">
-						<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img alt="John Smith" src="images/users/avatar-001.jpg"></span>John Smith</a>
-					</div>
-				</div>
-				<div class="menu-content">
-					<ul class="nav">
-						<li>
-							<a href="javascript:void(0)"><span class="icon icon-account-box"></span>Profile Settings</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)"><span class="icon icon-add-to-photos"></span>Upload Photo</a>
-						</li>
-						<li>
-							<a href="page-login.html"><span class="icon icon-exit-to-app"></span>Logout</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-	<div class="menu menu-right menu-search" id="search">
-		<div class="menu-scroll">
-			<div class="menu-wrap">
-				<div class="menu-top">
-					<div class="menu-top-info">
-						<form class="menu-top-form">
-							<label class="access-hide" for="menu-search">Search</label>
-							<input class="form-control form-control-inverse" id="menu-search" placeholder="Search" type="search">
-							<button class="access-hide" type="submit">Search</button>
-						</form>
-					</div>
-				</div>
-				<div class="menu-content">
-					<div class="menu-content-inner">
-						<p><strong>Saved Search Queries:</strong></p>
-						<ul>
-							<li><a href="javascript:void(0)">lorem ipsum dolor sit amet</a></li>
-							<li><a href="javascript:void(0)">consectetur adipiscing elit</a></li>
-							<li><a href="javascript:void(0)">sed ornare orci lorem</a></li>
-							<li><a href="javascript:void(0)">vel eleifend elit tempor eleifend</a></li>
-							<li><a href="javascript:void(0)">morbi feugiat aliquet justo</a></li>
-						</ul>
-						<hr>
-						<p><strong>Popular Search Queries:</strong></p>
-						<ul>
-							<li><a href="javascript:void(0)">id ullamcorper tortor lobortis eu</a></li>
-							<li><a href="javascript:void(0)">aliquam ut tellus arcu</a></li>
-							<li><a href="javascript:void(0)">cestibulum tortor purus</a></li>
-							<li><a href="javascript:void(0)">pretium ac dolor id</a></li>
-							<li><a href="javascript:void(0)">gravida molestie libero</a></li>
-						</ul>
+					<div class="progress-circular-gap"></div>
+					<div class="progress-circular-right">
+						<div class="progress-circular-spinner"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<header class="header header-transparent header-waterfall">
+		<ul class="nav nav-list pull-left">
+			<li>
+				<a data-toggle="menu" href="#menu">
+					<span class="icon icon-lg">menu</span>
+				</a>
+			</li>
+		</ul>
+		<a class="header-logo margin-left-no" href="index.html">Material</a>
+		<div class="header-affix pull-left" data-offset-top="108" data-spy="affix">
+			<span class="header-text margin-left-no">
+				<i class="icon margin-right">chevron_right</i>Collapsible Regions
+			</span>
+		</div>
+		<ul class="nav nav-list pull-right">
+			<li>
+				<a data-toggle="menu" href="#profile">
+					<span class="access-hide">John Smith</span>
+					<span class="avatar"><img alt="alt text for John Smith avatar" src="images/users/avatar-001.jpg"></span>
+				</a>
+			</li>
+		</ul>
+	</header>
+	<nav aria-hidden="true" class="menu" id="menu" tabindex="-1">
+		<div class="menu-scroll">
+			<div class="menu-content">
+				<a class="menu-logo" href="index.html">Material</a>
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="ui-card.html">Cards</a>
+					</li>
+					<li class="active">
+						<a class="waves-attach" href="ui-collapse.html">Collapsible Regions</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="ui-dropdown.html">Dropdowns</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="ui-modal.html">Modals &amp; Toasts</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="ui-nav.html">Navs</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="ui-progress.html">Progress Bars</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="ui-tab.html">Tabs</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="ui-tile.html">Tiles</a>
+					</li>
+				</ul>
+				<hr>
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="ui-button.html">Buttons</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="ui-form.html">Form Elements</a>
+						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+						<ul class="menu-collapse collapse" id="form-elements">
+							<li>
+								<a class="waves-attach" href="ui-form-adv.html">Form Elements <small>(materialised)</small></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="waves-attach" href="ui-icon.html">Icons</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="ui-table.html">Tables</a>
+					</li>
+				</ul>
+				<hr>
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="page-palette.html">Page Palettes</a>
+						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#page-palettes" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+						<ul class="menu-collapse collapse" id="page-palettes">
+							<li>
+								<a class="waves-attach" href="page-palette-brand.html">Brand Palette</a>
+							</li>
+							<li>
+								<a class="waves-attach" href="page-palette-brand-accent.html">Accent Palette</a>
+							</li>
+							<li>
+								<a class="waves-attach" href="page-palette-amber.html">Amber Palette</a>
+							</li>
+							<li>
+								<a class="waves-attach" href="page-palette-green.html">Green Palette</a>
+							</li>
+							<li>
+								<a class="waves-attach" href="page-palette-red.html">Red Palette</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<nav aria-hidden="true" class="menu menu-right" id="profile" tabindex="-1">
+		<div class="menu-scroll">
+			<div class="menu-top">
+				<div class="menu-top-img">
+					<img alt="John Smith" src="images/samples/landscape.jpg">
+				</div>
+				<div class="menu-top-info">
+					<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img alt="alt text for John Smith avatar" src="images/users/avatar-001.jpg"></span>John Smith</a>
+				</div>
+				<div class="menu-top-info-sub">
+					<small>Some additional information about John Smith</small>
+				</div>
+			</div>
+			<div class="menu-content">
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">account_box</span>Profile Settings</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">add_to_photos</span>Upload Photo</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="page-login.html"><span class="icon icon-lg">exit_to_app</span>Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<div class="content">
 		<div class="content-heading">
 			<div class="container">
 				<h1 class="heading">Collapsible Regions</h1>
 			</div>
 		</div>
-		<div class="content-inner">
-			<div class="container">
-				<p><a class="btn collapsed" data-toggle="collapse" href="#collapsible-region"><span class="collapsed-hide">Collapse</span><span class="collapsed-show">Expand</span></a></p>
-				<div class="collapsible-region collapse" id="collapsible-region">
-					<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-					<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-8">
+					<section class="content-inner">
+						<h2 class="content-sub-heading">Basic Collapsible</h2>
+						<p><a class="btn collapsed waves-attach waves-button" data-toggle="collapse" href="#collapsible-region"><span class="collapsed-hide">Collapse</span><span class="collapsed-show">Expand</span></a></p>
+						<div class="collapsible-region collapse" id="collapsible-region">
+							<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+							<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>
@@ -190,15 +195,20 @@
 	</footer>
 	<div class="fbtn-container">
 		<div class="fbtn-inner">
-			<a class="fbtn fbtn-red" data-toggle="dropdown" title="Upload"><span class="access-hide">Upload</span><span class="fbtn-rotate icon icon-add"></span></a>
+			<a class="fbtn fbtn-brand-accent fbtn-lg" data-toggle="dropdown"><span class="fbtn-text">Links</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
 			<div class="fbtn-dropdown">
-				<a class="fbtn fbtn-blue" href="javascript:void(0)"><span class="fbtn-text">Audio</span><span class="icon icon-mic"></span></a>
-				<a class="fbtn fbtn-green" href="javascript:void(0)"><span class="fbtn-text">Image</span><span class="icon icon-image"></span></a>
-				<a class="fbtn fbtn-yellow" href="javascript:void(0)"><span class="fbtn-text">Video</span><span class="icon icon-videocam"></span></a>
+				<a class="fbtn" href="https://github.com/Daemonite/material" target="_blank"><span class="fbtn-text">Fork me on GitHub</span><span class="fa fa-github"></span></a>
+				<a class="fbtn fbtn-blue" href="https://twitter.com/daemonites" target="_blank"><span class="fbtn-text">Follow Daemon on Twitter</span><span class="fa fa-twitter"></span></a>
+				<a class="fbtn fbtn-alt" href="http://www.daemon.com.au/" target="_blank"><span class="fbtn-text">Visit Daemon Website</span><span class="icon">link</span></a>
 			</div>
 		</div>
 	</div>
 
-	<script src="js/base.min.js" type="text/javascript"></script>
+	<!-- js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/base.min.js"></script>
+
+	<!-- js for this project -->
+	<script src="js/project.min.js"></script>
 </body>
 </html>
