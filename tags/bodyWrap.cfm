@@ -11,14 +11,15 @@
 <cfif thistag.executionMode eq "START">	
 	<cfoutput>
 	<div class="content">
-		<div class="content-heading">
-			<div class="container #iif(attributes.width EQ 'full', de('container-full'), de(''))#">
-				<cfif len(attributes.heading)>
+		<cfif len(attributes.heading)>
+			<div class="content-heading">
+				<div class="container #iif(attributes.width EQ 'full', de('container-full'), de(''))#">
+					
 					<h1 class="heading">#attributes.heading#</h1>
-				</cfif>
-			</div><!-- /.container -->
-		</div><!-- /.content-heading -->
-
+					
+				</div><!-- /.container -->
+			</div><!-- /.content-heading -->
+		</cfif>
 		<cfif structKeyExists(session.fc, "lTots") AND len(session.fc.lTots)>
 
 			<div class="content-nav">

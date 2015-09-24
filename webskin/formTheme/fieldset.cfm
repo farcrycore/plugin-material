@@ -44,7 +44,7 @@
 		<cfset thisTag.generatedContent = "" />
 	</cfif>
 	
-	<cfoutput><fieldset class="fieldset" style="#trim(attributes.style)#"></cfoutput>
+	<cfoutput><fieldset class="fieldset row" style="#trim(attributes.style)#"></cfoutput>
 	
 	<cfif len(attributes.legend)>
 		<cfoutput><legend >#trim(attributes.legend)#</legend></cfoutput>

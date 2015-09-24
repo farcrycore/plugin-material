@@ -7,13 +7,13 @@
 	<div class="menu-scroll">
 		<div class="menu-top">
 			<div class="menu-top-img">
-				<img alt="John Smith" src="/material/images/samples/landscape.jpg">
+				<img alt="#stobj.firstname# #stobj.lastname#" src="/material/images/samples/landscape.jpg">
 			</div>
 			<div class="menu-top-info">
-				<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img alt="alt text for John Smith avatar" src="/material/images/users/avatar-001.jpg"></span>John Smith</a>
+				<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img alt="alt text for #stobj.firstname# #stobj.lastname# avatar" src="/material/images/users/avatar-001.jpg"></span>#stobj.firstname# #stobj.lastname#</a>
 			</div>
 			<div class="menu-top-info-sub">
-				<small>Some additional information about John Smith</small>
+				<small>Some additional information about #stobj.firstname# #stobj.lastname#</small>
 			</div>
 		</div>
 		<div class="menu-content">
@@ -25,7 +25,7 @@
 					<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">add_to_photos</span>Upload Photo</a>
 				</li>
 				<li>
-					<a class="waves-attach" href="page-login.html"><span class="icon icon-lg">exit_to_app</span>Logout</a>
+					<a class="waves-attach" href="/?logout=1"><span class="icon icon-lg">exit_to_app</span>Logout</a>
 				</li>
 			</ul>
 		</div>

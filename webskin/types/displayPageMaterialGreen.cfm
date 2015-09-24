@@ -13,7 +13,7 @@
 
 
 <skin:view typename="dmProfile" objectID="#application.fapi.getCurrentUsersProfile().objectid#" webskin="displayMaterialHeader" 
-			pageBrand="page-green" />
+			palette="green" />
 
 
 <skin:view typename="#url.type#" objectID="#url.objectid#" webskin="#url.bodyView#" />
