@@ -131,12 +131,12 @@
 		<cfset var lData = "" />
 
 	
-		<cfset lData = getListData(	objectid="#arguments.stobject.objectid#", 
+		<cfset qData = getListData(	objectid="#arguments.stobject.objectid#", 
 									typename="#arguments.typename#",
 									property="#arguments.stMetadata.name#",
 									stPropMetadata="#arguments.stMetadata#") /> 
 		
-		<cfif listLen(lData)>
+		<cfif qData.recordCount>
 			<cfswitch expression="#arguments.stMetadata.ftRenderType#">
 
 
@@ -147,18 +147,18 @@
 
 
 							<cfset tmpCount=0>
-							<cfloop list="#lData#" index="i">
+							<cfloop query="qData">
 								<cfset tmpCount=tmpCount + 1>
-								<cfif Left(i, 1) EQ ":">
+								<cfif Left(qData.value, 1) EQ ":">
 									<cfset optionValue = "" /><!--- This means that the developer wants the value to be an empty string --->
 								<cfelse>
-									<cfset optionValue = ListFirst(i,":") />
+									<cfset optionValue = ListFirst(qData.value,":") />
 								</cfif>
 								<div class="#arguments.stMetadata.ftRenderType# #arguments.stMetadata.ftRenderType#-adv #iif(arguments.stMetadata.ftMultipleLines, de(''), de('#arguments.stMetadata.ftRenderType#-inline'))#">
 									<label for="#arguments.fieldname#-#tmpCount#">
 										<input class="access-hide #arguments.inputClass# #arguments.stMetadata.ftClass#" style="#arguments.stMetadata.ftStyle#" id="#arguments.fieldname#-#tmpCount#" name="#arguments.fieldname#" type="#arguments.stMetadata.ftRenderType#"
 											 	value="#optionValue#"
-											 	<cfif listFindNoCase(arguments.stMetadata.value, optionValue)> checked="checked"</cfif>>#ListLast(i , ":")#
+											 	<cfif listFindNoCase(arguments.stMetadata.value, optionValue)> checked="checked"</cfif>>#ListLast(qData.value , ":")#
 										<span class="circle"></span><span class="circle-check"></span>
 									</label>
 								</div>
@@ -175,13 +175,13 @@
 					<cfsavecontent variable="html">
 
 						<cfoutput><select id="#arguments.fieldname#" name="#arguments.fieldname#" class="#arguments.inputClass# #arguments.stMetadata.ftClass#" style="#arguments.stMetadata.ftStyle#"<cfif arguments.stMetadata.ftSelectMultiple> multiple="multiple"</cfif>></cfoutput>
-						<cfloop list="#lData#" index="i">
-							<cfif Left(i, 1) EQ ":">
+						<cfloop query="qData">
+							<cfif Left(qData.value, 1) EQ ":">
 								<cfset optionValue = "" /><!--- This means that the developer wants the value to be an empty string --->
 							<cfelse>
-								<cfset optionValue = ListFirst(i,":") />
+								<cfset optionValue = ListFirst(qData.value,":") />
 							</cfif>
-							<cfoutput><option value="#optionValue#"<cfif listFindNoCase(arguments.stMetadata.value, optionValue) or arguments.stMetadata.value eq optionValue> selected="selected"</cfif>>#ListLast(i , ":")#</option></cfoutput>
+							<cfoutput><option value="#optionValue#"<cfif listFindNoCase(arguments.stMetadata.value, optionValue) or arguments.stMetadata.value eq optionValue> selected="selected"</cfif>>#ListLast(qData.value , ":")#</option></cfoutput>
 						</cfloop>
 						<cfoutput></select><input type="hidden" name="#arguments.fieldname#" value=""></cfoutput>
 						
